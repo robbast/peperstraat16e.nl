@@ -21,9 +21,46 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <style type="text/css">
+
       div.card {
         background-color: rgba(0, 0, 0, 0.01);
       }
+
+      div.overlay {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .3s;
+      }
+
+      div.overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        width: auto;
+        height: auto;
+        transform: scale(0.95);
+        transition: transform .3s;
+      }
+
+      div.overlay:target {
+        visibility: visible;
+        outline: none;
+        cursor: default;
+      }
+
+      div.overlay:target img {
+        transform: scale(1);
+      }
+
     </style>
 
   </head>
@@ -33,11 +70,7 @@
     <main class="row g-0">
 
       <div class="text-center p-4">
-        <h1>Tijdlijn
-          <span class="badge rounded-pill bg-light">
-            <i class="bi text-secondary bi-arrow-down-up" id="timeline-toggle" data-target="#timeline"></i>
-          </span>
-        </h1>
+        <h1>Tijdlijn</h1>
       </div>
 
       <!-- timeline based on https://codepen.io/Maxalos/pen/MXXqGj -->
@@ -46,6 +79,45 @@
 
         <section class="row">
 
+          <div class="col">
+            <h3 class="d-flex justify-content-end mt-2 mt-md-1">1894</h3>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">R.K. Weeshuis St. Joseph</h4>
+                <p class="card-text text-secondary">
+                  Op maandag 12 januari 1894 wordt het pand geopend, waarin het R.K. Weeshuis St. Joseph
+                  zal worden gevestigd. Het staat op het adres Gouwe C242, tegenwoordig Hoge Gouwe 31.
+                  Het is ontworpen door Goudse architect C.P.W. Dessing. Voor het weeshuis is op deze locatie
+                  een eeuwenoud pand afgebroken, dat bekend stond als het Vlaamsch Linnenhuis. Na de opening
+                  van het pand duurt het nog ruim een jaar voor het gebouw in gebruik wordt genomen als weeshuis.
+                </p>
+                <p>
+                  <small>Bronnen</small>
+                  <ul>
+                    <li>Die Goude<br><cite><a href="https://www.diegoude.nl/wp-content/uploads/2020/06/RK-Weeshuis-op-de-Gouwe-2016-2.pdf">Het RK Weeshuis op de Gouwe (1894-1929)</a></cite></li>
+                    <li>Delpher<br><cite><a href="https://www.delpher.nl/nl/kranten/view?objectsearch=%22Gouda%2C+12+Jan.+Heden-ochtend%22&coll=ddd&identifier=ddd:010385830:mpeg21:a0061">De Tijd: godsdienstig-staatkundig dagblad 16-01-1894</a></cite></li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-auto d-none d-md-flex flex-column text-center">
+            <div class="m-2">
+              <i class="bi bi-calendar"></i>
+            </div>
+            <div class="row h-100">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+
+          <div class="col d-none d-md-flex"><!-- spacer --></div>
+
+        </section>
+
+        <section class="row">
+
           <div class="col d-none d-md-flex"><!-- spacer --></div>
 
           <div class="col-auto d-none d-md-flex flex-column text-center">
@@ -59,59 +131,40 @@
           </div>
 
           <div class="col">
-            <h3 class="d-flex justify-content-start mt-2 mt-md-1">1894</h3>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">rooms-katholiek weeshuis Sint-Joseph</h4>
-                <p class="card-text text-secondary">Geopend op maandag 12 januari 1894. Ontworpen door de Goudse architect C.P.W. Dessing in opdracht van het bestuur van de Sint-Josephparochie. Het adres destijds was "Gouwe C242". Voor het weeshuis is op deze locatie een eeuwenoud pand afgebroken, dat bekend stond als het Vlaamsch Linnenhuis.</p>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-        <section class="row">
-
-          <div class="col">
-            <h3 class="d-flex justify-content-end mt-2 mt-md-1">ca. 1931</h3>
+            <h3 class="d-flex justify-content-start mt-2 mt-md-1">ca. 1931</h3>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">rooms-katholieke bewaarschool</h4>
-                <p class="card-text text-secondary">Nadat het weeshuis op gaat in het nieuwe gebouwde Sint-Josefpaviljoen, komt er een rooms-katholieke bewaarschool voor in de plaats. Het bestuur van de R.K. Inrichting van Liefdadigheid laat het pand ingrijpend verbouwen.</p>
+                <p class="card-text text-secondary">
+                  Nadat het weeshuis op gaat in het nieuwe gebouwde Sint-Josefpaviljoen, komt er een
+                  rooms-katholieke bewaarschool voor in de plaats. Het bestuur van de R.K. Inrichting van
+                  Liefdadigheid laat het pand ingrijpend verbouwen.
+                </p>
+                <p>
+                  <h5>Bouwtekeningen</h5>
+                  <ul>
+                    <li><a href="images/bouwtekeningen/blad-1.png">Blad 1 (begane grond)</a></li>
+                    <li><a href="images/bouwtekeningen/blad-2.png">Blad 2 (gevels e.d.)</a></li>
+                    <li><a href="images/bouwtekeningen/blad-3.png">Blad 3 (balklagen)</a></li>
+                    <li><a href="images/bouwtekeningen/trappenhuis.png">Trappenhuis</a></li>
+                  </ul>
+                </p>
+                <p>
+                  <small>Bron</small>
+                  <ul>
+                    <li><a href="https://samh.nl/">Streekarchief Midden-Holland</a></li>
+                  </ul>
+                </p>
               </div>
             </div>
           </div>
-
-          <div class="col-auto d-none d-md-flex flex-column text-center">
-            <div class="m-2">
-              <i class="bi bi-calendar"></i>
-            </div>
-            <div class="row h-100">
-              <div class="col border-end">&nbsp;</div>
-              <div class="col">&nbsp;</div>
-            </div>
-          </div>
-
-          <div class="col d-none d-md-flex"><!-- spacer --></div>
 
         </section>
 
         <section class="row">
 
-          <div class="col d-none d-md-flex"><!-- spacer --></div>
-
-          <div class="col-auto d-none d-md-flex flex-column text-center">
-            <div class="m-2">
-              <i class="bi bi-calendar"></i>
-            </div>
-            <div class="row h-100">
-              <div class="col border-end">&nbsp;</div>
-              <div class="col">&nbsp;</div>
-            </div>
-          </div>
-
           <div class="col">
-            <h3 class="d-flex justify-content-start mt-2 mt-md-1">1952</h3>
+            <h3 class="d-flex justify-content-end mt-2 mt-md-1">1952</h3>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Mariakleuterschool</h4>
@@ -120,12 +173,36 @@
             </div>
           </div>
 
+          <div class="col-auto d-none d-md-flex flex-column text-center">
+            <div class="m-2">
+              <i class="bi bi-calendar"></i>
+            </div>
+            <div class="row h-100">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+
+          <div class="col d-none d-md-flex"><!-- spacer --></div>
+
         </section>
 
         <section class="row">
 
+          <div class="col d-none d-md-flex"><!-- spacer --></div>
+
+          <div class="col-auto d-none d-md-flex flex-column text-center">
+            <div class="m-2">
+              <i class="bi bi-calendar"></i>
+            </div>
+            <div class="row h-100">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+
           <div class="col">
-            <h3 class="d-flex justify-content-end mt-2 mt-md-1">ca. 1973 &ndash; 1977</h3>
+            <h3 class="d-flex justify-content-start mt-2 mt-md-1">ca. 1973 &ndash; 1977</h3>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Jaren '70</h4>
@@ -134,36 +211,12 @@
             </div>
           </div>
 
-          <div class="col-auto d-none d-md-flex flex-column text-center">
-            <div class="m-2">
-              <i class="bi bi-calendar"></i>
-            </div>
-            <div class="row h-100">
-              <div class="col border-end">&nbsp;</div>
-              <div class="col">&nbsp;</div>
-            </div>
-          </div>
-
-          <div class="col d-none d-md-flex"><!-- spacer --></div>
-
         </section>
 
         <section class="row">
 
-          <div class="col d-none d-md-flex"><!-- spacer --></div>
-
-          <div class="col-auto d-none d-md-flex flex-column text-center">
-            <div class="m-2">
-              <i class="bi bi-calendar"></i>
-            </div>
-            <div class="row h-100">
-              <div class="col border-end">&nbsp;</div>
-              <div class="col">&nbsp;</div>
-            </div>
-          </div>
-
           <div class="col">
-            <h3 class="d-flex justify-content-start mt-2 mt-md-1">1977</h3>
+            <h3 class="d-flex justify-content-end mt-2 mt-md-1">1977</h3>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Intergemeentelijk samenwerkingsorgaan Midden-Holland</h4>
@@ -172,12 +225,36 @@
             </div>
           </div>
 
+          <div class="col-auto d-none d-md-flex flex-column text-center">
+            <div class="m-2">
+              <i class="bi bi-calendar"></i>
+            </div>
+            <div class="row h-100">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+
+          <div class="col d-none d-md-flex"><!-- spacer --></div>
+
         </section>
 
         <section class="row">
 
+          <div class="col d-none d-md-flex"><!-- spacer --></div>
+
+          <div class="col-auto d-none d-md-flex flex-column text-center">
+            <div class="m-2">
+              <i class="bi bi-calendar"></i>
+            </div>
+            <div class="row h-100">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+
           <div class="col">
-            <h3 class="d-flex justify-content-end mt-2 mt-md-1">1995</h3>
+            <h3 class="d-flex justify-content-start mt-2 mt-md-1">1995</h3>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Verbouwing wooneenheden</h4>
@@ -186,36 +263,12 @@
             </div>
           </div>
 
-          <div class="col-auto d-none d-md-flex flex-column text-center">
-            <div class="m-2">
-              <i class="bi bi-calendar"></i>
-            </div>
-            <div class="row h-100">
-              <div class="col border-end">&nbsp;</div>
-              <div class="col">&nbsp;</div>
-            </div>
-          </div>
-
-          <div class="col d-none d-md-flex"><!-- spacer --></div>
-
         </section>
 
         <section class="row">
 
-          <div class="col d-none d-md-flex"><!-- spacer --></div>
-
-          <div class="col-auto d-none d-md-flex flex-column text-center">
-            <div class="m-2">
-              <i class="bi bi-calendar"></i>
-            </div>
-            <div class="row h-100">
-              <div class="col border-end">&nbsp;</div>
-              <div class="col">&nbsp;</div>
-            </div>
-          </div>
-
           <div class="col">
-            <h3 class="d-flex justify-content-start mt-2 mt-md-1">1997</h3>
+            <h3 class="d-flex justify-content-end mt-2 mt-md-1">1997</h3>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Gemeentelijk Monument</h4>
@@ -223,6 +276,18 @@
               </div>
             </div>
           </div>
+
+          <div class="col-auto d-none d-md-flex flex-column text-center">
+            <div class="m-2">
+              <i class="bi bi-calendar"></i>
+            </div>
+            <div class="row h-100">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+
+          <div class="col d-none d-md-flex"><!-- spacer --></div>
 
         </section>
 
@@ -243,13 +308,7 @@
       (function(a,b,c,d,e,f){a.ready=new Promise(function(g){function h(){g(),a[d](e,h,!0),b[d](f,h,!0)}'complete'===a.readyState?g():(a[c](e,h,!0),b[c](f,h,!0))})})(document,window,'addEventListener','removeEventListener','DOMContentLoaded','load');
 
       document.ready.then(() => {
-        document.querySelector('#timeline-toggle')
-          .addEventListener('click', (e) => {
-            const id = e.target.dataset.target;
 
-            document.querySelector(id)
-              .classList.toggle("flex-column-reverse");
-          });
       });
 
     </script>
