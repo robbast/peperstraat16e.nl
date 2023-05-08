@@ -1,3 +1,7 @@
 div.card {
   background-color: rgba(0, 0, 0, 0.01);
 }
+
+header mark {
+  color: #730707;
+}
