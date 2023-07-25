@@ -1,9 +1,13 @@
+:root {
+  --dark-red: #730707;
+}
+
 div.card {
   background-color: rgba(0, 0, 0, 0.01);
 }
 
 header mark {
-  color: #730707;
+  color: var(--dark-red);
 }
 
 .pswp__custom-caption {
@@ -19,4 +23,9 @@ header mark {
   left: 50%;
   bottom: 16px;
   transform: translateX(-50%);
+}
+
+ol.references > li:target, ol.references > li:target::marker {
+  font-weight: bold;
+  color: var(--dark-red);
 }
