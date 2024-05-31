@@ -26,6 +26,13 @@ header mark {
 }
 
 ol.references > li:target, ol.references > li:target::marker {
-  font-weight: bold;
   color: var(--dark-red);
+}
+
+ol.references > li:target > figure > blockquote, ol.references > li:target::marker {
+  font-weight: bold;
+}
+
+blockquote.blockquote {
+  font-size: inherit !important;
 }
