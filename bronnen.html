@@ -311,6 +311,19 @@
       function gtag() { dataLayer.push(arguments) }
       gtag('js', new Date())
       gtag('config', 'G-Q5YN1ZCS28')
+
+      // chrome mobile sometimes does not scroll to anchor identifier
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)
+        const location = new URL(window.location)
+
+        if (location.hash && isChrome) {
+          setTimeout(() => document
+            .getElementById(location.hash.replace('#', ''))
+            ?.scrollIntoView()
+          , 250)
+        }
+      })
     </script>
 
     <script type="application/ld+json">
