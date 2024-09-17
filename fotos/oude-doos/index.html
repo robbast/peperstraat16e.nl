@@ -60,7 +60,7 @@
 
   <p class="lead">Een nostalgische verzameling van oude foto's. Bedankt aan iedereen voor hun bijdragen!</p>
 
-  <section class="gallery row" data-masonry='{"percentPosition": true }'>
+  <section class="gallery row">
     <figure class="col-12 col-md-4">
       <a href="resized/102.non.webp" data-pswp-srcset="
         resized/102.non-320w.webp 320w,
@@ -230,6 +230,9 @@
 
 </main>
 
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q5YN1ZCS28"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
 <script type="module">
 
   import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.3.7/dist/photoswipe-lightbox.esm.min.js'
@@ -270,15 +273,17 @@
 
   lightbox.init()
 
-</script>
+  document.addEventListener('DOMContentLoaded', () => {
+    new Masonry(document.querySelector('section.gallery.row'), {
+      percentPosition: true
+    })
+  })
 
-<script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q5YN1ZCS28"></script>
-<script>
   window.dataLayer = window.dataLayer || []
   function gtag() { dataLayer.push(arguments) }
   gtag('js', new Date())
   gtag('config', 'G-Q5YN1ZCS28')
+
 </script>
 
 </body>
