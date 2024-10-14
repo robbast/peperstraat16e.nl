@@ -25,11 +25,11 @@ header mark {
   transform: translateX(-50%);
 }
 
-ol.references > li:target, ol.references > li:target::marker {
+ul.references > li:target, ul.references > li:target::marker {
   color: var(--dark-red);
 }
 
-ol.references > li:target > figure > blockquote, ol.references > li:target::marker {
+ul.references > li:target > figure > blockquote, ul.references > li:target::marker {
   font-weight: bold;
 }
 
