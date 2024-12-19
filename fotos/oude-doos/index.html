@@ -273,11 +273,9 @@
 
   lightbox.init()
 
-  document.addEventListener('DOMContentLoaded', () => {
-    new Masonry(document.querySelector('section.gallery.row'), {
-      itemSelector: 'figure',
-      percentPosition: true,
-    })
+  new Masonry(document.querySelector('section.gallery.row'), {
+    itemSelector: 'figure',
+    percentPosition: true,
   })
 
   window.dataLayer = window.dataLayer || []
