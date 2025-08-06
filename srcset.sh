@@ -9,10 +9,10 @@ type=webp
 
 test ! -d "${path}/resized" && mkdir -p "${path}/resized"
 
-magick "$filename" -strip "${prefix}.${type}"
+convert "$filename" -strip "${prefix}.${type}"
 
 for size in 320 640 768 1024 1366 1440 1600 1920; do
-  magick "$filename" -strip -adaptive-resize "$size" "${prefix}-${size}w.${type}"
+  convert "$filename" -strip -adaptive-resize "$size" "${prefix}-${size}w.${type}"
 done
 
 echo "<figure class=\"col-12 col-md-4\">"
