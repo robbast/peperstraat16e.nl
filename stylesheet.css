@@ -1,5 +1,10 @@
 :root {
   --dark-red: #730707;
+  --bright-red: #b80101;
+}
+
+a {
+  color: var(--bright-red);
 }
 
 div.card {
