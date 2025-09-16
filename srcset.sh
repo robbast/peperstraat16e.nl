@@ -28,7 +28,7 @@ for size in 320 640 768 1024 1366 1440 1600 1920; do
   echo "    resized/${file}-${size}w.webp ${size}w,"
 done
 echo "  \" $(identify -format 'data-pswp-width=\"%w\" data-pswp-height=\"%h\"' "${path}/resized/${file}.webp") target=\"_blank\">"
-echo "    <img class=\"figure-img img-thumbnail\" src=\"${path}/resized/${file}-768w.webp\" />"
+echo "    <img class=\"figure-img img-thumbnail\" src=\"resized/${file}-640w.webp\" />"
 echo "  </a>"
 echo "  <figcaption>Lorem ipsum</figcaption>"
 echo "</figure>"
