@@ -232,8 +232,7 @@
 
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q5YN1ZCS28"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-<script type="module">
+<script defer type="module">
 
   import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe-lightbox.esm.min.js'
   import PhotoSwipeFullscreen from 'https://cdn.jsdelivr.net/gh/arnowelzel/photoswipe-fullscreen@1/photoswipe-fullscreen.esm.min.js'
@@ -273,9 +272,11 @@
 
   lightbox.init()
 
-  new Masonry(document.querySelector('section.gallery.row'), {
-    itemSelector: 'figure',
-    percentPosition: true,
+  window.addEventListener('load', () => {
+    new Masonry('section.gallery.row', {
+      itemSelector: 'figure',
+      percentPosition: true,
+    })
   })
 
   window.dataLayer = window.dataLayer || []
