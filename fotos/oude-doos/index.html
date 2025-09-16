@@ -131,7 +131,7 @@
         resized/1000015250-1440w.webp 1440w,
         resized/1000015250-1600w.webp 1600w,
         resized/1000015250-1920w.webp 1920w,
-      " data-pswp-width="3000" data-pswp-height="4000" target="_blank">
+      " data-pswp-width="4000" data-pswp-height="3000" target="_blank">
         <img class="figure-img img-thumbnail" src="resized/1000015250-640w.webp" />
       </a>
       <figcaption>Foto van een kerstviering van waarschijnlijk 1959. Trudy speelde hier de rol van Maria. Foto van Trudy Streefkerk-Leijs.</figcaption>
@@ -299,7 +299,7 @@
 
   const lightbox = new PhotoSwipeLightbox({
     gallery: 'section.gallery',
-    children: 'a',
+    children: 'figure > a:first-child',
     pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.esm.min.js'),
     bgOpacity: 0.9,
     loop: false,
