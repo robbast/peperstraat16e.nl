@@ -47,20 +47,14 @@ class PhotoSwipeFullscreen {
       if (this.fullscreenAPI.isFullscreen()) {
         this.fullscreenAPI.exit()
         setTimeout(function () {
-          document.getElementById('pswp__icn-fullscreen-exit').style.display =
-            'none'
-          document.getElementById(
-            'pswp__icn-fullscreen-request',
-          ).style.display = 'inline'
+          document.getElementById('pswp__icn-fullscreen-exit').style.display = 'none'
+          document.getElementById('pswp__icn-fullscreen-request').style.display = 'inline'
         }, 300)
       } else {
         this.fullscreenAPI.request(document.querySelector('.pswp'))
         setTimeout(function () {
-          document.getElementById('pswp__icn-fullscreen-exit').style.display =
-            'inline'
-          document.getElementById(
-            'pswp__icn-fullscreen-request',
-          ).style.display = 'none'
+          document.getElementById('pswp__icn-fullscreen-exit').style.display = 'inline'
+          document.getElementById('pswp__icn-fullscreen-request').style.display = 'none'
         }, 300)
       }
     }
