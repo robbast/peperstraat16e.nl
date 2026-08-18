@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "masonry-layout": "^4.2.2",
+    "photoswipe": "^5.4.4",
+    "photoswipe-fullscreen": "file:packages/photoswipe-fullscreen"
+  },
+  "devDependencies": {
+    "@github/copilot": "^1.0.80",
+    "vite": "^6.0.0",
+    "vite-plugin-static-copy": "^2.0.0"
+  }
+}
