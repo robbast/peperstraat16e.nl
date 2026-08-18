@@ -14,6 +14,16 @@ body {
   font-family: 'Georgia', 'Times New Roman', serif;
   color: #1a1008;
   line-height: 1.75;
+  min-height: 100vh;
+}
+
+body.site-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1 0 auto;
 }
 
 /* Headings in a clean sans-serif for contrast */
