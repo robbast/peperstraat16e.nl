@@ -9,7 +9,7 @@
     "lint:js": "eslint \"*.js\" \"src/**/*.js\"",
     "format": "prettier --write \"*.{html,js,json}\" \"fotos/**/*.html\" \"src/**/*.js\" \".github/**/*.yml\" \"stylesheet.css\"",
     "format:check": "prettier --check \"*.{html,js,json}\" \"fotos/**/*.html\" \"src/**/*.js\" \".github/**/*.yml\" \"stylesheet.css\"",
-    "fix": "npm run lint:html -- --fix && npm run lint:css -- --fix && npm run lint:js -- --fix && npm run format"
+    "fix": "npm run lint:html && npm run lint:css -- --fix && npm run lint:js -- --fix && npm run format"
   },
   "dependencies": {
     "@sentry/browser": "^10.70.0",

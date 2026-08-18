@@ -1,17 +1,17 @@
 /* ── Design tokens ─────────────────────────────────────────────────────── */
 :root {
-  --dark-red:   rgba(115, 0, 0, 1);
-  --bright-red: rgba(185, 0, 0, 1);
-  --header-bg:  #2b0a0a;   /* very dark red-brown */
-  --header-fg:  #f5e6d6;   /* warm off-white */
-  --body-bg:    #faf7f4;   /* warm page background */
-  --nav-active-bg: rgba(255, 255, 255, 0.18);
+  --dark-red: rgb(115 0 0 / 100%);
+  --bright-red: rgb(185 0 0 / 100%);
+  --header-bg: #2b0a0a; /* very dark red-brown */
+  --header-fg: #f5e6d6; /* warm off-white */
+  --body-bg: #faf7f4; /* warm page background */
+  --nav-active-bg: rgb(255 255 255 / 18%);
 }
 
 /* ── Base ───────────────────────────────────────────────────────────────── */
 body {
   background-color: var(--body-bg);
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   color: #1a1008;
   line-height: 1.75;
   min-height: 100vh;
@@ -27,8 +27,18 @@ body.site-page {
 }
 
 /* Headings in a clean sans-serif for contrast */
-h1, h2, h3, h4, h5, h6 {
-  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Arial,
+    sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -47,7 +57,7 @@ header.site-header {
   background-color: var(--header-bg);
   color: var(--header-fg);
   border-bottom: 3px solid var(--bright-red);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 35%);
 }
 
 /* Logo: tint to warm off-white on dark background */
@@ -65,7 +75,7 @@ header.site-header h1 {
 header.site-header h2 {
   font-size: clamp(0.85rem, 2vw, 1.1rem);
   margin: 0;
-  color: rgba(245, 230, 214, 0.7);
+  color: rgb(245 230 214 / 70%);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -73,7 +83,7 @@ header.site-header h2 {
 
 header mark {
   background: none;
-  color: #f8b400;   /* warm gold accent on dark background */
+  color: #f8b400; /* warm gold accent on dark background */
   padding: 0;
 }
 
@@ -83,17 +93,24 @@ header.site-header .navbar {
 }
 
 header.site-header .nav-link {
-  color: rgba(245, 230, 214, 0.82) !important;
+  color: rgb(245 230 214 / 82%) !important;
   border-radius: 6px;
   padding: 0.3rem 0.75rem;
-  transition: background-color 0.18s ease, color 0.18s ease;
-  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Arial,
+    sans-serif;
   font-size: 1rem;
 }
 
 header.site-header .nav-link:hover {
   color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgb(255 255 255 / 12%);
 }
 
 header.site-header .nav-link.active {
@@ -115,9 +132,9 @@ header.site-header .nav-underline .nav-link:focus {
 /* ── Cards ──────────────────────────────────────────────────────────────── */
 div.card {
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgb(0 0 0 / 8%);
   border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 6px rgb(0 0 0 / 6%);
 }
 
 /* ── Alerts ─────────────────────────────────────────────────────────────── */
@@ -130,7 +147,7 @@ div.card {
 .video-wrapper {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 18px rgb(0 0 0 / 18%);
 }
 
 /* ── Main content ───────────────────────────────────────────────────────── */
@@ -143,8 +160,13 @@ main {
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .site-footer {
   background-color: var(--header-bg);
-  color: rgba(245, 230, 214, 0.6);
-  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  color: rgb(245 230 214 / 60%);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Arial,
+    sans-serif;
   font-size: 0.82rem;
   padding: 1.25rem 0;
   margin-top: 3rem;
@@ -152,7 +174,7 @@ main {
 }
 
 .site-footer a {
-  color: rgba(245, 230, 214, 0.75);
+  color: rgb(245 230 214 / 75%);
   text-decoration: none;
 }
 
@@ -162,7 +184,7 @@ main {
 
 /* ── PhotoSwipe caption ─────────────────────────────────────────────────── */
 .pswp__custom-caption {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0 0 0 / 60%);
   font-size: 16px;
   color: #fff;
   text-shadow: 1px 1px 1px black;
@@ -177,11 +199,13 @@ main {
 }
 
 /* ── References ─────────────────────────────────────────────────────────── */
-ul.references > li:target, ul.references > li:target::marker {
+ul.references > li:target,
+ul.references > li:target::marker {
   color: var(--dark-red);
 }
 
-ul.references > li:target > figure > blockquote, ul.references > li:target::marker {
+ul.references > li:target > figure > blockquote,
+ul.references > li:target::marker {
   font-weight: bold;
 }
 
