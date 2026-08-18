@@ -2,7 +2,14 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js && npm run format:check",
+    "lint:html": "html-validate \"*.html\" \"fotos/**/*.html\"",
+    "lint:css": "stylelint \"stylesheet.css\"",
+    "lint:js": "eslint \"*.js\" \"src/**/*.js\"",
+    "format": "prettier --write \"*.{html,js,json}\" \"fotos/**/*.html\" \"src/**/*.js\" \".github/**/*.yml\" \"stylesheet.css\"",
+    "format:check": "prettier --check \"*.{html,js,json}\" \"fotos/**/*.html\" \"src/**/*.js\" \".github/**/*.yml\" \"stylesheet.css\"",
+    "fix": "npm run lint:html -- --fix && npm run lint:css -- --fix && npm run lint:js -- --fix && npm run format"
   },
   "dependencies": {
     "@sentry/browser": "^10.70.0",
@@ -12,7 +19,14 @@
     "photoswipe": "^5.4.4"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@github/copilot": "^1.0.80",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0",
+    "html-validate": "^11.8.0",
+    "prettier": "^3.9.6",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0",
     "vite": "^8.2.1",
     "vite-plugin-static-copy": "^4.1.1"
   }
