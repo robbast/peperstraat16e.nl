@@ -24,10 +24,7 @@ export default defineConfig({
         'fotos-dakterras': resolve(root, 'fotos/dakterras/index.html'),
         'fotos-keuken': resolve(root, 'fotos/keuken/index.html'),
         'fotos-tuin': resolve(root, 'fotos/tuin/index.html'),
-        'fotos-renovatie-exterieur': resolve(
-          root,
-          'fotos/renovatie-exterieur/index.html',
-        ),
+        'fotos-renovatie-exterieur': resolve(root, 'fotos/renovatie-exterieur/index.html'),
         'fotos-oude-doos': resolve(root, 'fotos/oude-doos/index.html'),
       },
     },
@@ -43,10 +40,7 @@ export default defineConfig({
       transformIndexHtml: {
         order: 'pre',
         handler(html) {
-          return html.replace(
-            /(<img\b[^>]*)\bsrc="((?!(?:https?:|\/\/|\/|data:))[^"]+\.(?:webp|jpg|jpeg|png)[^"]*)"/gi,
-            '$1 data-preserve-src="$2"',
-          )
+          return html.replace(/(<img\b[^>]*)\bsrc="((?!(?:https?:|\/\/|\/|data:))[^"]+\.(?:webp|jpg|jpeg|png)[^"]*)"/gi, '$1 data-preserve-src="$2"')
         },
       },
     },
