@@ -54,7 +54,7 @@ class PhotoSwipeFullscreen {
           ).style.display = 'inline'
         }, 300)
       } else {
-        this.fullscreenAPI.request(document.querySelector(`.pswp`))
+        this.fullscreenAPI.request(document.querySelector('.pswp'))
         setTimeout(function () {
           document.getElementById('pswp__icn-fullscreen-exit').style.display =
             'inline'
