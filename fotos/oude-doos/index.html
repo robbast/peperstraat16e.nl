@@ -1,67 +1,102 @@
 <!doctype html>
 <html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-<head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Rob Bast" />
+    <meta name="description" content="Foto's van Peperstraat 16e" />
+    <meta name="robots" content="noindex" />
 
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Foto's van Peperstraat 16e, Gouda</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Rob Bast">
-  <meta name="description" content="Foto's van Peperstraat 16e">
-  <meta name="robots" content="noindex">
+    <link rel="icon" href="../../favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/photoswipe/dist/photoswipe.css"
+    />
+    <link rel="stylesheet" href="../../stylesheet.css" />
+  </head>
 
-  <title>Foto's van Peperstraat 16e, Gouda</title>
+  <body>
+    <header class="site-header container-fluid mb-3 mb-md-4">
+      <div class="container d-flex flex-wrap align-items-center">
+        <div class="flex-shrink-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="d-inline-flex d-md-none"
+            width="100"
+            height="141"
+            viewBox="86.406 0 128.758 181"
+          >
+            <path
+              d="M95.9 64.8v55.8l16.1 15.5c33.4 32 37.4 35.8 38.4 35.9.6 0 12.3-11.4 26.1-25.3l25.2-25.2.6-6.5c.3-3.6.8-27.4 1.2-53l.6-46.5-4.2 4c-3.8 3.7-3.9 4-2 4.5 2.1.5 2.1.9 2.4 38.3.1 20.8 0 38-.4 38.2-.3.2-.5 2.7-.4 5.4.2 3.4-.1 5.1-.9 5.1-.7 0-5.7-4.8-11.2-10.7-5.5-5.9-10.9-11.6-12-12.7-8.3-8.5-19.5-20.8-19.5-21.5 0-.9 7.9-8.6 29.4-29.1 2.6-2.5 5.4-5.8 6.3-7.4l1.5-2.9-2.9 2.1c-1.5 1.1-10.9 9.9-20.8 19.5l-18 17.4 3.4 3.9c1.9 2.1 12.7 13.7 24 25.8 11.3 12 20.9 22.3 21.3 23 .5 1-48.3 51.6-49.9 51.6-1.3 0-52.4-50.5-52.1-51.5.2-.7 12.1-12.6 26.6-26.5 14.4-13.9 26.2-25.7 26.2-26.1 0-.9-24.9-27.6-34.9-37.3-3.3-3.3-6.3-5.8-6.6-5.5-.9.9 4 6.7 18.3 21.7 17.6 18.4 19.2 20.2 19.2 20.9 0 .8-32.1 32.3-40.8 40-3.4 3.1-6.5 5.3-6.9 4.9-.8-.7-.6-92.6.2-93.4.3-.3 2.2.2 4.2 1.2 3.5 1.7 3.6 1.7 2.3-.1-2.6-3.4-8.4-9.3-9.2-9.3-.4 0-.8 25.1-.8 55.8z"
+            />
+            <path
+              d="M109.7 13.1c-2.1 1.2-2.3 4.7-.4 7.1 3.6 4.8 9.5-.6 6.2-5.7-1.8-2.7-3.1-3-5.8-1.4zm3.8 2.6c-.3.8-.6 2.1-.6 2.9 0 .8-.4 1.4-1 1.4-.5 0-1-1.6-1-3.5 0-2.7.3-3.3 1.6-2.8.8.3 1.3 1.2 1 2zM123 19.2c.2 3.5.3 3.7.6 1.3l.5-3 1.3 3 1.4 3 .7-2.5.8-2.5.7 2.5c.6 2 .7 1.7.8-1.8.1-5-.6-5.4-2.1-1l-1.2 3.3-.8-3.3c-1.2-4.6-2.8-4-2.7 1zM132.5 16.6c-1.9 1.9-2 3.5-.3 5.8 2 2.7 5.1 1.7 5.5-1.7.3-2.7-1.2-5.7-2.9-5.7-.4 0-1.5.7-2.3 1.6zm4.4 2.9c0 1.8-.5 2.5-2 2.5s-2-.7-2-2.5.5-2.5 2-2.5 2 .7 2 2.5zM139.4 20c-.1 2.2.3 4 .7 4 .4 0 .8-1.2.8-2.8l.1-2.7 1.5 2.8c1.8 3.4 1.9 3.3 2.8-1.6.4-2.3.3-3.7-.4-3.7-.5 0-1 1.2-1 2.7l-.1 2.8-1.5-2.8c-2-3.7-2.9-3.4-2.9 1.3zM147.1 19.6c-.2 4.5 1.8 6.5 4.4 4.3 1.6-1.3 1.9-6.9.4-6.9-.5 0-1 1.3-1 3 0 4.6-2.8 3.9-3.3-.8l-.4-3.7-.1 4.1zM154 21.2c.1 4 .2 4.1.9 1.3.6-2.3.8-2.5.9-.8.2 3.3 2 3.7 2.8.6l.7-2.8.7 3c.6 2.7.7 2.6.8-1.3.1-5-1.2-5.5-2.6-1l-1 3.3-.7-3.3c-1.1-4.6-2.6-4-2.5 1zM161.9 20.9c0 3.2.4 4 2.2 4.5 1.3.3 2.7.1 3.2-.4.7-.7 0-1-1.7-1-3.2 0-3.7-2-.4-2.1 2.1 0 2.1-.1-.3-1.2l-2.5-1.1 2.8-.4c3.3-.4 2.6-2.2-.9-2.2-2.1 0-2.4.4-2.4 3.9zM187.3 18.4c-1.6 4.1 1.6 8.6 5.1 7.2 1.7-.6 1.6-.9-.9-3.5-2.1-2.2-2.4-3-1.3-3.4 1.9-.7 2.7.1 2.7 2.5 0 1 .5 1.8 1 1.8 1.4 0 1.3-3.3-.2-4.8-1.7-1.7-5.7-1.5-6.4.2zM172.9 20.1c0 1.1-.4 1.7-1 1.4-1.3-.8-1.3.1 0 2.6 1.5 2.7 2.5 2.4 2.5-.9 0-3.9 1.9-4.3 2.3-.5.4 4.1 2.2 4.3 2.2.3 0-1.7.5-3 1-3 .6 0 1-.5 1-1 0-.6-1.8-1-4-1-3.4 0-4 .3-4 2.1zM134.4 94.2c-.4 1.1-1.8 1.8-3.2 1.8-2.1 0-2.3.3-1.4 1.4.7.8.9 2.5.5 4.1-.6 2.4-.4 2.6 1.4 2.1 1.5-.5 2.2-.1 2.7 1.5.7 2.1.9 2.1 2 .6.7-.9 2.2-1.7 3.4-1.7 2.4 0 2.7-1 .9-2.8-.9-.9-.9-1.5 0-2.4 1.8-1.8 1.5-2.8-.9-2.8-1.2 0-2.8-.8-3.5-1.8-1.2-1.6-1.3-1.6-1.9 0zm2.8 4.4c.9 1-.4 3.4-1.9 3.4-.8 0-1.4-.9-1.4-2 0-1.9 1.9-2.7 3.3-1.4zM167.4 95.2c-.4 1.1-1.8 1.8-3.2 1.8-2.2 0-2.4.2-1.2 1.6 1 1.2 1 2 .1 3.5-1.1 1.7-.9 1.9 1.3 1.9 1.6 0 2.5.6 2.5 1.5 0 .8.5 1.5 1 1.5.6 0 1.3-.7 1.6-1.5.4-.8 1.5-1.5 2.5-1.5 2.1 0 2.4-1.1.8-2.7-.8-.8-.8-1.3 0-1.7 1.7-1.1 1.3-2.6-.5-2.6-.9 0-2.3-.8-3-1.8-1.2-1.6-1.3-1.6-1.9 0zm2.5 4.7c0 1-.7 2.1-1.5 2.5-1.1.4-1.5-.1-1.5-1.9 0-1.6.6-2.5 1.5-2.5.8 0 1.5.9 1.5 1.9zM134.4 114.2c-.4 1.1-1.8 1.8-3.2 1.8-2.1 0-2.3.2-1.3 1.5.6.8.9 2.3.5 3.5-.5 1.6-.2 2 1.4 2 1.1 0 2.2.9 2.7 2.2l.6 2.1 1.7-2.2c1.1-1.4 2.3-2 3.4-1.5 2 .7 2.3-.6.5-2.4-.9-.9-.9-1.5 0-2.4 1.8-1.8 1.5-2.8-.9-2.8-1.2 0-2.8-.8-3.5-1.8-1.2-1.6-1.3-1.6-1.9 0zm2.5 5.3c0 1.4-.6 2.5-1.4 2.5-.8 0-1.2-.9-1.1-2.3.3-2.7.3-2.7 1.5-2.7.6 0 1 1.1 1 2.5zM167 114.8c-.9 1.6-1.8 2.1-3.2 1.7-2.1-.7-2.5.5-.8 2.2.8.8.8 1.7-.1 3.3-1.1 2-1 2.1.8 1.6 1.4-.5 2.4-.1 3.1 1.1 1.1 1.7 1.1 1.7 2.2 0 .7-1.2 1.7-1.6 3-1.2 2.1.7 2.5-.5.7-2.3-.9-.9-.9-1.5 0-2.4 1.8-1.8 1.5-3-.6-2.4-1.3.5-2.2 0-2.9-1.6l-1-2.3-1.2 2.3zm2.7 4.9c-.5 2.5-2.8 2.8-2.8.4 0-1.2.6-2.1 1.6-2.1.9 0 1.4.7 1.2 1.7zM134.5 133.7c-.5 1.6-1.5 2.3-3.3 2.3-2.2 0-2.4.2-1.2 1.6 1 1.2 1 2 .1 3.5-1.1 1.7-.9 1.9 1.2 1.9 1.3 0 2.7.8 3.1 1.7.6 1.7.7 1.7 1.6 0 .6-.9 2.1-1.7 3.5-1.7 2.1 0 2.3-.2 1.2-1.9-.9-1.5-.9-2.3.1-3.5 1.2-1.4 1-1.6-1.1-1.6-1.6 0-2.8-.8-3.5-2.3l-1-2.2-.7 2.2zm2.4 5.3c0 1.1-.7 2-1.5 2s-1.5-.9-1.5-2 .7-2 1.5-2 1.5.9 1.5 2zM166.5 134.5c-.3.8-1.5 1.5-2.7 1.5-1.8 0-2 .2-.9 1.5 1 1.2 1 1.9.2 2.7-1.8 1.8-1.5 2.8.8 2.8 1 0 2.3.7 2.8 1.7.9 1.4 1.1 1.4 2.1-.5.7-1.2 1.9-2.2 2.7-2.2 1.1 0 1.4-.6 1-1.6-.3-.8-.1-2.5.5-3.6.9-1.8.8-1.9-1-1.3-1.4.4-2.3.1-2.7-.9-.8-2-2-2-2.8-.1zM147.4 159c-3.3 3.6 1.1 9 5.1 6.2.9-.6 1.1-4 .5-7.5-.2-1.5-3.8-.6-5.6 1.3z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="d-none d-md-inline-flex"
+            width="300"
+            height="262"
+          >
+            <path
+              d="M7 96.2v96.2l68-68.1c37.4-37.5 68-68.5 68-69C143 54.3 88.6 0 87.7 0c-2.7 0 2.4 5.8 24.8 28.3 14 14 25.5 26.3 25.5 27.2 0 .9-28.6 30.3-63.6 65.3C25 170.3 10.7 184.1 10 183c-.6-.9-1-35.3-1-83.5V8.7C9 3.6 8.6 0 8 0c-.7 0-1 32.7-1 96.2zM172.3 27.2c-15 15-27.3 27.7-27.3 28.2C145 56.5 278.1 190 279.3 190c2.6 0-8.2-11.4-66.1-69.4C177.9 85.3 149 55.9 149 55.4s11.1-11.9 24.6-25.4c25-25 29.6-30 27.3-30-.7 0-13.6 12.3-28.6 27.2z"
+            />
+            <path
+              d="M280.9 95.2c-.1 52.4-.2 95.7-.3 96.3 0 .5-15.7 16.6-34.8 35.7-25.6 25.7-34.1 34.8-32.5 34.8 1.2 0 3.1-.7 4.2-1.5 4.4-3.3 64.8-64.1 65.5-66 .5-1.5.7-190.2.1-193.8 0-.4-.5-.7-1.1-.7-.7 0-1 32.5-1.1 95.2zM101.3 129.6l-1.7 5.6-3.6-.5c-1.9-.3-5.1-.9-7-1.3l-3.5-.7 4.4 5.2 4.5 5.3-4.9 4.4c-2.6 2.5-4.5 4.7-4.2 5 .3.4 3.3-.3 6.7-1.4l6.1-2.1.9 2.5c.6 1.4 1.3 4.3 1.6 6.5.4 2.2 1 4.2 1.4 4.4.5.3 1.7-2.3 2.8-5.7 2.1-6.9 1.9-6.7 10-4.5 2.8.9 5.2 1.3 5.2 1 0-.2-1.9-2.7-4.1-5.4l-4.2-4.9 4.2-4.6c2.4-2.5 4.1-4.8 3.8-5-.2-.2-3.1.2-6.5 1-3.3.8-6.3 1.1-6.6.8-.3-.3-.9-2.7-1.2-5.4-.4-2.7-1-5.1-1.5-5.3-.4-.3-1.6 2-2.6 5.1zm4.4 6.4c1.4 1.1 3.2 2 3.9 2 1 0 1.4 1.4 1.4 5 0 3.7-.4 5-1.4 5-.8 0-2.7 1.1-4.3 2.4-2.9 2.4-2.9 2.4-4.2.5-.6-1.1-2.5-2.5-4.1-3-2.4-.9-2.8-1.4-2.1-3.2.5-1.2.5-3.2 0-4.5-.7-1.8-.5-2.2 1-2.2 1 0 2.9-.9 4.2-2 3-2.4 2.6-2.4 5.6 0zM184.4 131.8c-1.4 4-2.4 5.6-3.4 5.3-.8-.2-3.7-.9-6.5-1.7-2.7-.7-5.1-1.1-5.4-.8-.2.2.9 1.9 2.5 3.7 6.2 6.6 6.1 6.3 1 11-2.5 2.4-4.4 4.6-4.1 4.9.5.5 8.1-1.3 11.7-2.7 1.8-.7 2.2.2 3.4 7 1.2 7.2 2.1 7.4 3.9 1 1-3.3 2.2-6.3 2.7-6.6.9-.6 3.2-.2 10.1 1.6 3.7 1 3.4-.3-1.4-5.3l-4.2-4.3 2.9-3.2c1.6-1.7 3.5-3.7 4.2-4.5 2-2.2.8-2.5-5.4-1.2-6.4 1.4-6.9 1.1-7.9-5.2-1-5.7-2.1-5.4-4.1 1zm7.5 7.4c2.2.3 2.5.8 2.5 5.5.1 4.5-.2 5.3-1.7 5.3-1.1 0-3 .9-4.3 1.9-2.5 1.9-2.5 1.9-4.9-.5-1.3-1.3-3-2.4-3.8-2.4-.9 0-1.3-1.5-1.4-5-.1-4.5.2-5 2.1-5 1.1 0 3-.7 4-1.5 1.7-1.3 2.2-1.3 3.5-.1.9.8 2.7 1.6 4 1.8zM100.5 177.5c-1 3-2.3 5.5-3 5.5-.6 0-3.5-.7-6.4-1.6-2.9-.8-5.5-1.3-5.8-1-.5.5 2.3 4 6 7.4.9.9 1.7 2 1.7 2.4 0 .5-2.1 2.9-4.7 5.3-5.3 4.9-4.7 5.4 3.6 2.9 2.9-.8 5.5-1.4 5.6-1.2.2.2.9 2.6 1.6 5.3 2.2 9.4 2.5 9.6 4.4 2.7 1-3.5 2.4-6.6 3.1-6.9.6-.2 3.6.3 6.5 1.1 2.9.9 5.7 1.6 6.2 1.6s-1-2.1-3.2-4.6c-2.3-2.6-4.1-5.1-4.1-5.7 0-.5 1.7-3 3.7-5.5l3.7-4.5-4 .7c-2.1.4-5.1.9-6.5 1.2-2.3.4-2.8.1-3.8-2.7-.6-1.8-1.1-4-1.1-5 0-4-1.9-2.6-3.5 2.6zm4.5 6c.7.8 2.2 1.5 3.4 1.5 1.9 0 2.1.5 2 5.2 0 4.8-.3 5.3-2.4 5.6-1.4.2-3.1 1.2-4 2.2-1.5 1.7-1.7 1.7-4.3-.6-1.6-1.3-3.4-2.4-4.2-2.4-.9 0-1.3-1.1-1.2-3.3 0-1.7-.3-4-.7-5-.7-1.4-.3-1.7 2.2-1.7 1.6 0 3.5-.7 4.2-1.5.7-.8 1.8-1.5 2.5-1.5s1.8.7 2.5 1.5zM184.5 177.5c-1 3-2.3 5.5-3 5.5-.6 0-3.5-.7-6.4-1.6-2.9-.8-5.5-1.3-5.8-1-.3.3 1.3 2.5 3.6 4.8 2.2 2.4 4.1 4.6 4.1 5 0 .4-2.1 2.7-4.6 5-2.5 2.3-4.1 4.4-3.5 4.6.6.2 3.6-.4 6.6-1.3 3.1-.8 6-1.3 6.4-1 .5.3 1.2 2.9 1.6 5.8 1.2 8.4 2.1 8.8 4.1 1.8.9-3.5 2.3-6.5 3-6.8.6-.2 3.6.3 6.5 1.1 2.9.9 5.4 1.6 5.6 1.6 1.1 0-.2-2.1-3.7-5.8l-4.1-4.4 4.3-5 4.3-5.1-3 .5c-10.8 2.2-10.1 2.3-11.4-1.3-.6-1.7-1.1-4-1.1-5 0-4-1.9-2.6-3.5 2.6zm8.1 7.5c1.7 0 2 .7 2 5.5 0 5-.2 5.5-2.2 5.5-1.2 0-2.7.7-3.4 1.5-1.7 2-3.3 1.9-5.5-.5-1-1.1-2.6-2-3.5-2-1.3 0-1.6-1-1.7-5-.1-4.5.1-5 2.2-5 1.2 0 3-.9 4-2l1.8-2 2.2 2c1.2 1.1 3 2 4.1 2zM8.1 196.2c.7 1.3 15.5 16.6 32.9 34C62.8 252.1 73.4 262 74.9 262s-7.1-9.2-31.8-34c-18.6-18.7-34.4-34-35-34-.9 0-.9.6 0 2.2zM186 222.4c-.5 1.5-1.3 3.8-1.6 5.2-.9 3.4-2.1 3.7-7.9 1.9-8.1-2.4-8.3-2-2.4 4.5l4.1 4.4-4.7 4.4c-2.5 2.4-4.4 4.7-4 5 .3.3 2.9-.2 5.9-1.1 2.9-.9 5.7-1.7 6.3-1.7.6 0 1.7 2.9 2.4 6.5s1.6 6.5 1.9 6.5c.4 0 1.5-2.7 2.6-6 1-3.3 2.2-6 2.6-6 .4 0 3.3.7 6.4 1.5 3.2.8 5.9 1.3 6.1 1.1.2-.2-1.4-2.3-3.6-4.7-2.3-2.4-4.1-4.7-4.1-5 0-.3 1.6-2.4 3.5-4.6 4.1-4.8 4.5-6.6 1.2-5.4-1.3.5-4 1.1-6.2 1.2-3.8.4-3.8.4-5.1-4.4-1.6-6.1-2.1-6.6-3.4-3.3zm3 9.1c.7.8 2.6 1.5 4.2 1.5 2.6 0 2.8.2 1.7 2.1-.6 1.2-.8 3.6-.4 5.5.5 3.1.4 3.4-1.8 3.4-1.3 0-3.2.9-4.2 2l-1.8 2-2.7-2.5c-1.4-1.4-3.3-2.5-4.1-2.5-1 0-1.4-1.3-1.5-5 0-4.5.2-5 2.2-5 1.2 0 2.7-.7 3.4-1.5.7-.8 1.8-1.5 2.5-1.5s1.8.7 2.5 1.5zM100.4 226.6c-2.1 6.5-2.3 6.6-10.2 4.3-4.5-1.2-6.7-.5-4.2 1.5.8.6 2.8 2.6 4.4 4.4l2.9 3.1-4.6 4.8c-2.5 2.6-4.5 4.9-4.3 5.1.4.3 5-.8 10.6-2.5.8-.2 1.7-.3 2-.2.9.5 3 7.3 3 9.6 0 4.6 1.9 3.1 3.6-2.7 1.5-5.4 1.9-6 4.3-6 1.4.1 4.4.7 6.6 1.5 2.1.8 4.1 1.2 4.3 1 .3-.2-1.4-2.6-3.7-5.4l-4.1-4.9 4-4.7c2.3-2.6 3.9-4.9 3.7-5.2-.3-.2-3.1.3-6.3 1.1-3.1.8-6.1 1.3-6.5 1-.4-.2-1-2.3-1.4-4.7-1.2-7.3-2.1-7.5-4.1-1.1zm8.8 8.4c1.5 0 1.7.5 1.2 2.7-.4 1.6-.8 3-1 3.2-.2.2.1 1.2.6 2.1.8 1.5.5 1.9-1.8 2.5-1.5.3-3.5 1.4-4.5 2.2-1.6 1.5-1.9 1.5-4-.5-1.3-1.2-3.4-2.2-4.6-2.2-1.8 0-2.2-.4-1.6-1.8 1-2.2 1-4.2 0-6.5-.5-1.3-.2-1.7 1.5-1.7 1.2 0 3.3-.9 4.7-2 2.5-2 2.5-2 5 0 1.4 1.1 3.4 2 4.5 2z"
+            />
+          </svg>
+        </div>
+        <div class="flex-grow-1 ms-1 ms-md-5">
+          <h1>Peperstraat <mark>16e</mark></h1>
+          <h2>Gouda</h2>
+        </div>
+        <nav
+          class="flex-grow-1 m-2 navbar nav-underline justify-content-center fs-5"
+          aria-label="Hoofdnavigatie"
+        >
+          <a class="nav-link" href="../../index.html">16e</a>
+          <a class="nav-link active" aria-current="page">Foto's</a>
+          <a class="nav-link" href="../../tijdlijn.html">Tijdlijn</a>
+          <a class="nav-link" href="../../bronnen.html">Bronnen</a>
+          <a class="nav-link" href="../../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <link rel="icon" href="../../favicon.svg">
-  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../node_modules/photoswipe/dist/photoswipe.css">
-  <link rel="stylesheet" href="../../stylesheet.css">
+    <main class="container py-3 py-md-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item fs-3">
+            <a href="../../fotos.html">Foto's</a>
+          </li>
+          <li class="breadcrumb-item fs-3 active" aria-current="page">
+            Oude doos
+          </li>
+        </ol>
+      </nav>
 
+      <p class="lead">
+        Een nostalgische verzameling van oude foto's. Bedankt aan iedereen voor
+        hun bijdragen!
+      </p>
 
-</head>
-
-<body>
-
-<header class="site-header container-fluid mb-3 mb-md-4">
-  <div class="container d-flex flex-wrap align-items-center">
-    <div class="flex-shrink-0">
-      <svg xmlns="http://www.w3.org/2000/svg" class="d-inline-flex d-md-none" width="100" height="141" viewBox="86.406 0 128.758 181">
-        <path d="M95.9 64.8v55.8l16.1 15.5c33.4 32 37.4 35.8 38.4 35.9.6 0 12.3-11.4 26.1-25.3l25.2-25.2.6-6.5c.3-3.6.8-27.4 1.2-53l.6-46.5-4.2 4c-3.8 3.7-3.9 4-2 4.5 2.1.5 2.1.9 2.4 38.3.1 20.8 0 38-.4 38.2-.3.2-.5 2.7-.4 5.4.2 3.4-.1 5.1-.9 5.1-.7 0-5.7-4.8-11.2-10.7-5.5-5.9-10.9-11.6-12-12.7-8.3-8.5-19.5-20.8-19.5-21.5 0-.9 7.9-8.6 29.4-29.1 2.6-2.5 5.4-5.8 6.3-7.4l1.5-2.9-2.9 2.1c-1.5 1.1-10.9 9.9-20.8 19.5l-18 17.4 3.4 3.9c1.9 2.1 12.7 13.7 24 25.8 11.3 12 20.9 22.3 21.3 23 .5 1-48.3 51.6-49.9 51.6-1.3 0-52.4-50.5-52.1-51.5.2-.7 12.1-12.6 26.6-26.5 14.4-13.9 26.2-25.7 26.2-26.1 0-.9-24.9-27.6-34.9-37.3-3.3-3.3-6.3-5.8-6.6-5.5-.9.9 4 6.7 18.3 21.7 17.6 18.4 19.2 20.2 19.2 20.9 0 .8-32.1 32.3-40.8 40-3.4 3.1-6.5 5.3-6.9 4.9-.8-.7-.6-92.6.2-93.4.3-.3 2.2.2 4.2 1.2 3.5 1.7 3.6 1.7 2.3-.1-2.6-3.4-8.4-9.3-9.2-9.3-.4 0-.8 25.1-.8 55.8z"/>
-        <path d="M109.7 13.1c-2.1 1.2-2.3 4.7-.4 7.1 3.6 4.8 9.5-.6 6.2-5.7-1.8-2.7-3.1-3-5.8-1.4zm3.8 2.6c-.3.8-.6 2.1-.6 2.9 0 .8-.4 1.4-1 1.4-.5 0-1-1.6-1-3.5 0-2.7.3-3.3 1.6-2.8.8.3 1.3 1.2 1 2zM123 19.2c.2 3.5.3 3.7.6 1.3l.5-3 1.3 3 1.4 3 .7-2.5.8-2.5.7 2.5c.6 2 .7 1.7.8-1.8.1-5-.6-5.4-2.1-1l-1.2 3.3-.8-3.3c-1.2-4.6-2.8-4-2.7 1zM132.5 16.6c-1.9 1.9-2 3.5-.3 5.8 2 2.7 5.1 1.7 5.5-1.7.3-2.7-1.2-5.7-2.9-5.7-.4 0-1.5.7-2.3 1.6zm4.4 2.9c0 1.8-.5 2.5-2 2.5s-2-.7-2-2.5.5-2.5 2-2.5 2 .7 2 2.5zM139.4 20c-.1 2.2.3 4 .7 4 .4 0 .8-1.2.8-2.8l.1-2.7 1.5 2.8c1.8 3.4 1.9 3.3 2.8-1.6.4-2.3.3-3.7-.4-3.7-.5 0-1 1.2-1 2.7l-.1 2.8-1.5-2.8c-2-3.7-2.9-3.4-2.9 1.3zM147.1 19.6c-.2 4.5 1.8 6.5 4.4 4.3 1.6-1.3 1.9-6.9.4-6.9-.5 0-1 1.3-1 3 0 4.6-2.8 3.9-3.3-.8l-.4-3.7-.1 4.1zM154 21.2c.1 4 .2 4.1.9 1.3.6-2.3.8-2.5.9-.8.2 3.3 2 3.7 2.8.6l.7-2.8.7 3c.6 2.7.7 2.6.8-1.3.1-5-1.2-5.5-2.6-1l-1 3.3-.7-3.3c-1.1-4.6-2.6-4-2.5 1zM161.9 20.9c0 3.2.4 4 2.2 4.5 1.3.3 2.7.1 3.2-.4.7-.7 0-1-1.7-1-3.2 0-3.7-2-.4-2.1 2.1 0 2.1-.1-.3-1.2l-2.5-1.1 2.8-.4c3.3-.4 2.6-2.2-.9-2.2-2.1 0-2.4.4-2.4 3.9zM187.3 18.4c-1.6 4.1 1.6 8.6 5.1 7.2 1.7-.6 1.6-.9-.9-3.5-2.1-2.2-2.4-3-1.3-3.4 1.9-.7 2.7.1 2.7 2.5 0 1 .5 1.8 1 1.8 1.4 0 1.3-3.3-.2-4.8-1.7-1.7-5.7-1.5-6.4.2zM172.9 20.1c0 1.1-.4 1.7-1 1.4-1.3-.8-1.3.1 0 2.6 1.5 2.7 2.5 2.4 2.5-.9 0-3.9 1.9-4.3 2.3-.5.4 4.1 2.2 4.3 2.2.3 0-1.7.5-3 1-3 .6 0 1-.5 1-1 0-.6-1.8-1-4-1-3.4 0-4 .3-4 2.1zM134.4 94.2c-.4 1.1-1.8 1.8-3.2 1.8-2.1 0-2.3.3-1.4 1.4.7.8.9 2.5.5 4.1-.6 2.4-.4 2.6 1.4 2.1 1.5-.5 2.2-.1 2.7 1.5.7 2.1.9 2.1 2 .6.7-.9 2.2-1.7 3.4-1.7 2.4 0 2.7-1 .9-2.8-.9-.9-.9-1.5 0-2.4 1.8-1.8 1.5-2.8-.9-2.8-1.2 0-2.8-.8-3.5-1.8-1.2-1.6-1.3-1.6-1.9 0zm2.8 4.4c.9 1-.4 3.4-1.9 3.4-.8 0-1.4-.9-1.4-2 0-1.9 1.9-2.7 3.3-1.4zM167.4 95.2c-.4 1.1-1.8 1.8-3.2 1.8-2.2 0-2.4.2-1.2 1.6 1 1.2 1 2 .1 3.5-1.1 1.7-.9 1.9 1.3 1.9 1.6 0 2.5.6 2.5 1.5 0 .8.5 1.5 1 1.5.6 0 1.3-.7 1.6-1.5.4-.8 1.5-1.5 2.5-1.5 2.1 0 2.4-1.1.8-2.7-.8-.8-.8-1.3 0-1.7 1.7-1.1 1.3-2.6-.5-2.6-.9 0-2.3-.8-3-1.8-1.2-1.6-1.3-1.6-1.9 0zm2.5 4.7c0 1-.7 2.1-1.5 2.5-1.1.4-1.5-.1-1.5-1.9 0-1.6.6-2.5 1.5-2.5.8 0 1.5.9 1.5 1.9zM134.4 114.2c-.4 1.1-1.8 1.8-3.2 1.8-2.1 0-2.3.2-1.3 1.5.6.8.9 2.3.5 3.5-.5 1.6-.2 2 1.4 2 1.1 0 2.2.9 2.7 2.2l.6 2.1 1.7-2.2c1.1-1.4 2.3-2 3.4-1.5 2 .7 2.3-.6.5-2.4-.9-.9-.9-1.5 0-2.4 1.8-1.8 1.5-2.8-.9-2.8-1.2 0-2.8-.8-3.5-1.8-1.2-1.6-1.3-1.6-1.9 0zm2.5 5.3c0 1.4-.6 2.5-1.4 2.5-.8 0-1.2-.9-1.1-2.3.3-2.7.3-2.7 1.5-2.7.6 0 1 1.1 1 2.5zM167 114.8c-.9 1.6-1.8 2.1-3.2 1.7-2.1-.7-2.5.5-.8 2.2.8.8.8 1.7-.1 3.3-1.1 2-1 2.1.8 1.6 1.4-.5 2.4-.1 3.1 1.1 1.1 1.7 1.1 1.7 2.2 0 .7-1.2 1.7-1.6 3-1.2 2.1.7 2.5-.5.7-2.3-.9-.9-.9-1.5 0-2.4 1.8-1.8 1.5-3-.6-2.4-1.3.5-2.2 0-2.9-1.6l-1-2.3-1.2 2.3zm2.7 4.9c-.5 2.5-2.8 2.8-2.8.4 0-1.2.6-2.1 1.6-2.1.9 0 1.4.7 1.2 1.7zM134.5 133.7c-.5 1.6-1.5 2.3-3.3 2.3-2.2 0-2.4.2-1.2 1.6 1 1.2 1 2 .1 3.5-1.1 1.7-.9 1.9 1.2 1.9 1.3 0 2.7.8 3.1 1.7.6 1.7.7 1.7 1.6 0 .6-.9 2.1-1.7 3.5-1.7 2.1 0 2.3-.2 1.2-1.9-.9-1.5-.9-2.3.1-3.5 1.2-1.4 1-1.6-1.1-1.6-1.6 0-2.8-.8-3.5-2.3l-1-2.2-.7 2.2zm2.4 5.3c0 1.1-.7 2-1.5 2s-1.5-.9-1.5-2 .7-2 1.5-2 1.5.9 1.5 2zM166.5 134.5c-.3.8-1.5 1.5-2.7 1.5-1.8 0-2 .2-.9 1.5 1 1.2 1 1.9.2 2.7-1.8 1.8-1.5 2.8.8 2.8 1 0 2.3.7 2.8 1.7.9 1.4 1.1 1.4 2.1-.5.7-1.2 1.9-2.2 2.7-2.2 1.1 0 1.4-.6 1-1.6-.3-.8-.1-2.5.5-3.6.9-1.8.8-1.9-1-1.3-1.4.4-2.3.1-2.7-.9-.8-2-2-2-2.8-.1zM147.4 159c-3.3 3.6 1.1 9 5.1 6.2.9-.6 1.1-4 .5-7.5-.2-1.5-3.8-.6-5.6 1.3z"/>
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" class="d-none d-md-inline-flex" width="300" height="262">
-        <path d="M7 96.2v96.2l68-68.1c37.4-37.5 68-68.5 68-69C143 54.3 88.6 0 87.7 0c-2.7 0 2.4 5.8 24.8 28.3 14 14 25.5 26.3 25.5 27.2 0 .9-28.6 30.3-63.6 65.3C25 170.3 10.7 184.1 10 183c-.6-.9-1-35.3-1-83.5V8.7C9 3.6 8.6 0 8 0c-.7 0-1 32.7-1 96.2zM172.3 27.2c-15 15-27.3 27.7-27.3 28.2C145 56.5 278.1 190 279.3 190c2.6 0-8.2-11.4-66.1-69.4C177.9 85.3 149 55.9 149 55.4s11.1-11.9 24.6-25.4c25-25 29.6-30 27.3-30-.7 0-13.6 12.3-28.6 27.2z"/>
-        <path d="M280.9 95.2c-.1 52.4-.2 95.7-.3 96.3 0 .5-15.7 16.6-34.8 35.7-25.6 25.7-34.1 34.8-32.5 34.8 1.2 0 3.1-.7 4.2-1.5 4.4-3.3 64.8-64.1 65.5-66 .5-1.5.7-190.2.1-193.8 0-.4-.5-.7-1.1-.7-.7 0-1 32.5-1.1 95.2zM101.3 129.6l-1.7 5.6-3.6-.5c-1.9-.3-5.1-.9-7-1.3l-3.5-.7 4.4 5.2 4.5 5.3-4.9 4.4c-2.6 2.5-4.5 4.7-4.2 5 .3.4 3.3-.3 6.7-1.4l6.1-2.1.9 2.5c.6 1.4 1.3 4.3 1.6 6.5.4 2.2 1 4.2 1.4 4.4.5.3 1.7-2.3 2.8-5.7 2.1-6.9 1.9-6.7 10-4.5 2.8.9 5.2 1.3 5.2 1 0-.2-1.9-2.7-4.1-5.4l-4.2-4.9 4.2-4.6c2.4-2.5 4.1-4.8 3.8-5-.2-.2-3.1.2-6.5 1-3.3.8-6.3 1.1-6.6.8-.3-.3-.9-2.7-1.2-5.4-.4-2.7-1-5.1-1.5-5.3-.4-.3-1.6 2-2.6 5.1zm4.4 6.4c1.4 1.1 3.2 2 3.9 2 1 0 1.4 1.4 1.4 5 0 3.7-.4 5-1.4 5-.8 0-2.7 1.1-4.3 2.4-2.9 2.4-2.9 2.4-4.2.5-.6-1.1-2.5-2.5-4.1-3-2.4-.9-2.8-1.4-2.1-3.2.5-1.2.5-3.2 0-4.5-.7-1.8-.5-2.2 1-2.2 1 0 2.9-.9 4.2-2 3-2.4 2.6-2.4 5.6 0zM184.4 131.8c-1.4 4-2.4 5.6-3.4 5.3-.8-.2-3.7-.9-6.5-1.7-2.7-.7-5.1-1.1-5.4-.8-.2.2.9 1.9 2.5 3.7 6.2 6.6 6.1 6.3 1 11-2.5 2.4-4.4 4.6-4.1 4.9.5.5 8.1-1.3 11.7-2.7 1.8-.7 2.2.2 3.4 7 1.2 7.2 2.1 7.4 3.9 1 1-3.3 2.2-6.3 2.7-6.6.9-.6 3.2-.2 10.1 1.6 3.7 1 3.4-.3-1.4-5.3l-4.2-4.3 2.9-3.2c1.6-1.7 3.5-3.7 4.2-4.5 2-2.2.8-2.5-5.4-1.2-6.4 1.4-6.9 1.1-7.9-5.2-1-5.7-2.1-5.4-4.1 1zm7.5 7.4c2.2.3 2.5.8 2.5 5.5.1 4.5-.2 5.3-1.7 5.3-1.1 0-3 .9-4.3 1.9-2.5 1.9-2.5 1.9-4.9-.5-1.3-1.3-3-2.4-3.8-2.4-.9 0-1.3-1.5-1.4-5-.1-4.5.2-5 2.1-5 1.1 0 3-.7 4-1.5 1.7-1.3 2.2-1.3 3.5-.1.9.8 2.7 1.6 4 1.8zM100.5 177.5c-1 3-2.3 5.5-3 5.5-.6 0-3.5-.7-6.4-1.6-2.9-.8-5.5-1.3-5.8-1-.5.5 2.3 4 6 7.4.9.9 1.7 2 1.7 2.4 0 .5-2.1 2.9-4.7 5.3-5.3 4.9-4.7 5.4 3.6 2.9 2.9-.8 5.5-1.4 5.6-1.2.2.2.9 2.6 1.6 5.3 2.2 9.4 2.5 9.6 4.4 2.7 1-3.5 2.4-6.6 3.1-6.9.6-.2 3.6.3 6.5 1.1 2.9.9 5.7 1.6 6.2 1.6s-1-2.1-3.2-4.6c-2.3-2.6-4.1-5.1-4.1-5.7 0-.5 1.7-3 3.7-5.5l3.7-4.5-4 .7c-2.1.4-5.1.9-6.5 1.2-2.3.4-2.8.1-3.8-2.7-.6-1.8-1.1-4-1.1-5 0-4-1.9-2.6-3.5 2.6zm4.5 6c.7.8 2.2 1.5 3.4 1.5 1.9 0 2.1.5 2 5.2 0 4.8-.3 5.3-2.4 5.6-1.4.2-3.1 1.2-4 2.2-1.5 1.7-1.7 1.7-4.3-.6-1.6-1.3-3.4-2.4-4.2-2.4-.9 0-1.3-1.1-1.2-3.3 0-1.7-.3-4-.7-5-.7-1.4-.3-1.7 2.2-1.7 1.6 0 3.5-.7 4.2-1.5.7-.8 1.8-1.5 2.5-1.5s1.8.7 2.5 1.5zM184.5 177.5c-1 3-2.3 5.5-3 5.5-.6 0-3.5-.7-6.4-1.6-2.9-.8-5.5-1.3-5.8-1-.3.3 1.3 2.5 3.6 4.8 2.2 2.4 4.1 4.6 4.1 5 0 .4-2.1 2.7-4.6 5-2.5 2.3-4.1 4.4-3.5 4.6.6.2 3.6-.4 6.6-1.3 3.1-.8 6-1.3 6.4-1 .5.3 1.2 2.9 1.6 5.8 1.2 8.4 2.1 8.8 4.1 1.8.9-3.5 2.3-6.5 3-6.8.6-.2 3.6.3 6.5 1.1 2.9.9 5.4 1.6 5.6 1.6 1.1 0-.2-2.1-3.7-5.8l-4.1-4.4 4.3-5 4.3-5.1-3 .5c-10.8 2.2-10.1 2.3-11.4-1.3-.6-1.7-1.1-4-1.1-5 0-4-1.9-2.6-3.5 2.6zm8.1 7.5c1.7 0 2 .7 2 5.5 0 5-.2 5.5-2.2 5.5-1.2 0-2.7.7-3.4 1.5-1.7 2-3.3 1.9-5.5-.5-1-1.1-2.6-2-3.5-2-1.3 0-1.6-1-1.7-5-.1-4.5.1-5 2.2-5 1.2 0 3-.9 4-2l1.8-2 2.2 2c1.2 1.1 3 2 4.1 2zM8.1 196.2c.7 1.3 15.5 16.6 32.9 34C62.8 252.1 73.4 262 74.9 262s-7.1-9.2-31.8-34c-18.6-18.7-34.4-34-35-34-.9 0-.9.6 0 2.2zM186 222.4c-.5 1.5-1.3 3.8-1.6 5.2-.9 3.4-2.1 3.7-7.9 1.9-8.1-2.4-8.3-2-2.4 4.5l4.1 4.4-4.7 4.4c-2.5 2.4-4.4 4.7-4 5 .3.3 2.9-.2 5.9-1.1 2.9-.9 5.7-1.7 6.3-1.7.6 0 1.7 2.9 2.4 6.5s1.6 6.5 1.9 6.5c.4 0 1.5-2.7 2.6-6 1-3.3 2.2-6 2.6-6 .4 0 3.3.7 6.4 1.5 3.2.8 5.9 1.3 6.1 1.1.2-.2-1.4-2.3-3.6-4.7-2.3-2.4-4.1-4.7-4.1-5 0-.3 1.6-2.4 3.5-4.6 4.1-4.8 4.5-6.6 1.2-5.4-1.3.5-4 1.1-6.2 1.2-3.8.4-3.8.4-5.1-4.4-1.6-6.1-2.1-6.6-3.4-3.3zm3 9.1c.7.8 2.6 1.5 4.2 1.5 2.6 0 2.8.2 1.7 2.1-.6 1.2-.8 3.6-.4 5.5.5 3.1.4 3.4-1.8 3.4-1.3 0-3.2.9-4.2 2l-1.8 2-2.7-2.5c-1.4-1.4-3.3-2.5-4.1-2.5-1 0-1.4-1.3-1.5-5 0-4.5.2-5 2.2-5 1.2 0 2.7-.7 3.4-1.5.7-.8 1.8-1.5 2.5-1.5s1.8.7 2.5 1.5zM100.4 226.6c-2.1 6.5-2.3 6.6-10.2 4.3-4.5-1.2-6.7-.5-4.2 1.5.8.6 2.8 2.6 4.4 4.4l2.9 3.1-4.6 4.8c-2.5 2.6-4.5 4.9-4.3 5.1.4.3 5-.8 10.6-2.5.8-.2 1.7-.3 2-.2.9.5 3 7.3 3 9.6 0 4.6 1.9 3.1 3.6-2.7 1.5-5.4 1.9-6 4.3-6 1.4.1 4.4.7 6.6 1.5 2.1.8 4.1 1.2 4.3 1 .3-.2-1.4-2.6-3.7-5.4l-4.1-4.9 4-4.7c2.3-2.6 3.9-4.9 3.7-5.2-.3-.2-3.1.3-6.3 1.1-3.1.8-6.1 1.3-6.5 1-.4-.2-1-2.3-1.4-4.7-1.2-7.3-2.1-7.5-4.1-1.1zm8.8 8.4c1.5 0 1.7.5 1.2 2.7-.4 1.6-.8 3-1 3.2-.2.2.1 1.2.6 2.1.8 1.5.5 1.9-1.8 2.5-1.5.3-3.5 1.4-4.5 2.2-1.6 1.5-1.9 1.5-4-.5-1.3-1.2-3.4-2.2-4.6-2.2-1.8 0-2.2-.4-1.6-1.8 1-2.2 1-4.2 0-6.5-.5-1.3-.2-1.7 1.5-1.7 1.2 0 3.3-.9 4.7-2 2.5-2 2.5-2 5 0 1.4 1.1 3.4 2 4.5 2z"/>
-      </svg>
-    </div>
-    <div class="flex-grow-1 ms-1 ms-md-5">
-      <h1>Peperstraat <mark>16e</mark></h1>
-      <h2>Gouda</h2>
-    </div>
-    <nav class="flex-grow-1 m-2 navbar nav-underline justify-content-center fs-5" aria-label="Hoofdnavigatie">
-      <a class="nav-link" href="../../index.html">16e</a>
-      <a class="nav-link active" aria-current="page">Foto's</a>
-      <a class="nav-link" href="../../tijdlijn.html">Tijdlijn</a>
-      <a class="nav-link" href="../../bronnen.html">Bronnen</a>
-      <a class="nav-link" href="../../contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container py-3 py-md-4">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item fs-3"><a href="../../fotos.html">Foto's</a></li>
-      <li class="breadcrumb-item fs-3 active" aria-current="page">Oude doos</li>
-    </ol>
-  </nav>
-
-  <p class="lead">Een nostalgische verzameling van oude foto's. Bedankt aan iedereen voor hun bijdragen!</p>
-
-  <section class="gallery row">
-    <figure class="col-12 col-md-4">
-      <a href="resized/NL-GdSAMH_0440_3877_Fotocollectie_MH.webp" data-pswp-srcset="
+      <section class="gallery row">
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/NL-GdSAMH_0440_3877_Fotocollectie_MH.webp"
+            data-pswp-srcset="
         resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-320w.webp 320w,
         resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-640w.webp 640w,
         resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-768w.webp 768w,
@@ -70,13 +105,30 @@
         resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-1440w.webp 1440w,
         resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-1600w.webp 1600w,
         resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-1920w.webp 1920w,
-      " data-pswp-width="2521" data-pswp-height="1793" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-640w.webp" />
-      </a>
-      <figcaption>Groepsfoto van weeskinderen in weeskleding van het R.K. St. Jozef weeshuis. O.a. te zien op de foto: Antonia Boot, Clara Boot en Christien Zinkhaan. Bron: <a href="https://samh.nl/bronnen/beeldbank/detail/85de40ed-2ce8-7d31-f396-90949cfaf4a9/media/7eec0a6e-9aee-636b-1a89-1b8c14ce47df">SAMH</a></figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/NL-GdSAMH_0440_3832_Fotocollectie_MH.webp" data-pswp-srcset="
+      "
+            data-pswp-width="2521"
+            data-pswp-height="1793"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/NL-GdSAMH_0440_3877_Fotocollectie_MH-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Groepsfoto van weeskinderen in weeskleding van het R.K. St. Jozef
+            weeshuis. O.a. te zien op de foto: Antonia Boot, Clara Boot en
+            Christien Zinkhaan. Bron:
+            <a
+              href="https://samh.nl/bronnen/beeldbank/detail/85de40ed-2ce8-7d31-f396-90949cfaf4a9/media/7eec0a6e-9aee-636b-1a89-1b8c14ce47df"
+              >SAMH</a
+            >
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/NL-GdSAMH_0440_3832_Fotocollectie_MH.webp"
+            data-pswp-srcset="
         resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-320w.webp 320w,
         resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-640w.webp 640w,
         resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-768w.webp 768w,
@@ -85,13 +137,30 @@
         resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-1440w.webp 1440w,
         resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-1600w.webp 1600w,
         resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-1920w.webp 1920w,
-      " data-pswp-width="1950" data-pswp-height="1375" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-640w.webp" />
-      </a>
-      <figcaption>Groepsfoto van verklede weeskinderen op de binnenplaats van het in 1894 gestichte St. Josephs weeshuis. Datering vermoedelijk 1927. Bron: <a href="https://samh.nl/bronnen/beeldbank/detail/c2b78335-2eb4-42e9-3ac5-522495f2a938/media/666341ea-ae9a-ee5f-e932-13f041aac43a">SAMH</a></figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/102.non.webp" data-pswp-srcset="
+      "
+            data-pswp-width="1950"
+            data-pswp-height="1375"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/NL-GdSAMH_0440_3832_Fotocollectie_MH-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Groepsfoto van verklede weeskinderen op de binnenplaats van het in
+            1894 gestichte St. Josephs weeshuis. Datering vermoedelijk 1927.
+            Bron:
+            <a
+              href="https://samh.nl/bronnen/beeldbank/detail/c2b78335-2eb4-42e9-3ac5-522495f2a938/media/666341ea-ae9a-ee5f-e932-13f041aac43a"
+              >SAMH</a
+            >
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/102.non.webp"
+            data-pswp-srcset="
         resized/102.non-320w.webp 320w,
         resized/102.non-640w.webp 640w,
         resized/102.non-768w.webp 768w,
@@ -100,13 +169,30 @@
         resized/102.non-1440w.webp 1440w,
         resized/102.non-1600w.webp 1600w,
         resized/102.non-1920w.webp 1920w,
-      " data-pswp-width="2122" data-pswp-height="1682" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/102.non-640w.webp" />
-      </a>
-      <figcaption>Op de foto zien we Tonnie Spruijt op het dak van de Maria kleuterschool, rond 1936-1937. Ze was de jongste van een gezin met 11 kinderen, en in een traditioneel katholiek huishouden ging er vaak minstens één kind de geestelijke wereld in. Om alvast een voorproefje te nemen, is ze hier verkleed als nonnetje. Het heeft niet echt geholpen. In 1955 is ze naar Australie geëmigreerd. Foto van Marcel de Pauw.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/marianne.1955.webp" data-pswp-srcset="
+      "
+            data-pswp-width="2122"
+            data-pswp-height="1682"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/102.non-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Op de foto zien we Tonnie Spruijt op het dak van de Maria
+            kleuterschool, rond 1936-1937. Ze was de jongste van een gezin met
+            11 kinderen, en in een traditioneel katholiek huishouden ging er
+            vaak minstens één kind de geestelijke wereld in. Om alvast een
+            voorproefje te nemen, is ze hier verkleed als nonnetje. Het heeft
+            niet echt geholpen. In 1955 is ze naar Australie geëmigreerd. Foto
+            van Marcel de Pauw.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/marianne.1955.webp"
+            data-pswp-srcset="
         resized/marianne.1955-320w.webp 320w,
         resized/marianne.1955-640w.webp 640w,
         resized/marianne.1955-768w.webp 768w,
@@ -115,13 +201,25 @@
         resized/marianne.1955-1440w.webp 1440w,
         resized/marianne.1955-1600w.webp 1600w,
         resized/marianne.1955-1920w.webp 1920w,
-      " data-pswp-width="2910" data-pswp-height="1860" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/marianne.1955-640w.webp" />
-      </a>
-      <figcaption>Vermoedelijk de klas van juffrouw Henny in 1955, genomen op het toenmalige speelplein. Foto van Marianne Huijsman-Nederhoff.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/1000015250.webp" data-pswp-srcset="
+      "
+            data-pswp-width="2910"
+            data-pswp-height="1860"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/marianne.1955-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Vermoedelijk de klas van juffrouw Henny in 1955, genomen op het
+            toenmalige speelplein. Foto van Marianne Huijsman-Nederhoff.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/1000015250.webp"
+            data-pswp-srcset="
         resized/1000015250-320w.webp 320w,
         resized/1000015250-640w.webp 640w,
         resized/1000015250-768w.webp 768w,
@@ -130,13 +228,25 @@
         resized/1000015250-1440w.webp 1440w,
         resized/1000015250-1600w.webp 1600w,
         resized/1000015250-1920w.webp 1920w,
-      " data-pswp-width="4000" data-pswp-height="3000" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/1000015250-640w.webp" />
-      </a>
-      <figcaption>Foto van een kerstviering van waarschijnlijk 1959. Trudy speelde hier de rol van Maria. Foto van Trudy Streefkerk-Leijs.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20230910_190647.webp" data-pswp-srcset="
+      "
+            data-pswp-width="4000"
+            data-pswp-height="3000"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/1000015250-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Foto van een kerstviering van waarschijnlijk 1959. Trudy speelde
+            hier de rol van Maria. Foto van Trudy Streefkerk-Leijs.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20230910_190647.webp"
+            data-pswp-srcset="
         resized/20230910_190647-320w.webp 320w,
         resized/20230910_190647-640w.webp 640w,
         resized/20230910_190647-768w.webp 768w,
@@ -145,13 +255,26 @@
         resized/20230910_190647-1440w.webp 1440w,
         resized/20230910_190647-1600w.webp 1600w,
         resized/20230910_190647-1920w.webp 1920w,
-      " data-pswp-width="4000" data-pswp-height="3000" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20230910_190647-640w.webp" />
-      </a>
-      <figcaption>"1960 Sinterklaasfeest kleuterschool bij Zr. Petri" - Waarschijnlijk genomen in een van de oude lokalen van de toenmalige kleuterschool. Foto van Adry Lexmond.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20230910_190501.webp" data-pswp-srcset="
+      "
+            data-pswp-width="4000"
+            data-pswp-height="3000"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20230910_190647-640w.webp"
+            />
+          </a>
+          <figcaption>
+            "1960 Sinterklaasfeest kleuterschool bij Zr. Petri" - Waarschijnlijk
+            genomen in een van de oude lokalen van de toenmalige kleuterschool.
+            Foto van Adry Lexmond.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20230910_190501.webp"
+            data-pswp-srcset="
         resized/20230910_190501-320w.webp 320w,
         resized/20230910_190501-640w.webp 640w,
         resized/20230910_190501-768w.webp 768w,
@@ -160,13 +283,27 @@
         resized/20230910_190501-1440w.webp 1440w,
         resized/20230910_190501-1600w.webp 1600w,
         resized/20230910_190501-1920w.webp 1920w,
-      " data-pswp-width="4000" data-pswp-height="3000" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20230910_190501-640w.webp" />
-      </a>
-      <figcaption>"1961 Kerstfeest kleuterschool bij Zr. Crispine" - Hoogstwaarschijnlijk genomen in het speellokaal op de eerste verdieping van de toenmalige kleuterschool (nu de woonkamer van Peperstraat 16E). Foto van Adry Lexmond.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20240115_151236.webp" data-pswp-srcset="
+      "
+            data-pswp-width="4000"
+            data-pswp-height="3000"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20230910_190501-640w.webp"
+            />
+          </a>
+          <figcaption>
+            "1961 Kerstfeest kleuterschool bij Zr. Crispine" -
+            Hoogstwaarschijnlijk genomen in het speellokaal op de eerste
+            verdieping van de toenmalige kleuterschool (nu de woonkamer van
+            Peperstraat 16E). Foto van Adry Lexmond.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20240115_151236.webp"
+            data-pswp-srcset="
         resized/20240115_151236-320w.webp 320w,
         resized/20240115_151236-640w.webp 640w,
         resized/20240115_151236-768w.webp 768w,
@@ -175,13 +312,28 @@
         resized/20240115_151236-1440w.webp 1440w,
         resized/20240115_151236-1600w.webp 1600w,
         resized/20240115_151236-1920w.webp 1920w,
-      " data-pswp-width="3808" data-pswp-height="2488" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20240115_151236-640w.webp" />
-      </a>
-      <figcaption>Een foto van de gang waarop de glas-in-loodramen nog duidelijk te zien zijn, genomen tijdens de periode dat het gebouw dienstdeed als kantoor. Tegenwoordig zijn deze ramen vermoedelijk verborgen achter voorzetwanden in de woningen aan de Peperstraat 16B en 16C. Foto van Wim Jans.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20240115_151245.webp" data-pswp-srcset="
+      "
+            data-pswp-width="3808"
+            data-pswp-height="2488"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20240115_151236-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Een foto van de gang waarop de glas-in-loodramen nog duidelijk te
+            zien zijn, genomen tijdens de periode dat het gebouw dienstdeed als
+            kantoor. Tegenwoordig zijn deze ramen vermoedelijk verborgen achter
+            voorzetwanden in de woningen aan de Peperstraat 16B en 16C. Foto van
+            Wim Jans.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20240115_151245.webp"
+            data-pswp-srcset="
         resized/20240115_151245-320w.webp 320w,
         resized/20240115_151245-640w.webp 640w,
         resized/20240115_151245-768w.webp 768w,
@@ -190,13 +342,27 @@
         resized/20240115_151245-1440w.webp 1440w,
         resized/20240115_151245-1600w.webp 1600w,
         resized/20240115_151245-1920w.webp 1920w,
-      " data-pswp-width="2181" data-pswp-height="3178" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20240115_151245-640w.webp" />
-      </a>
-      <figcaption>Gemaakt tijdens de periode dat het gebouw als kantoor werd gebruikt. Op de foto zien we een medewerker van ISMH op de plek die tegenwoordig de zolder is van de woning aan Hoge Gouwe 31. Foto van Wim Jans.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20240115_151255.webp" data-pswp-srcset="
+      "
+            data-pswp-width="2181"
+            data-pswp-height="3178"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20240115_151245-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Gemaakt tijdens de periode dat het gebouw als kantoor werd gebruikt.
+            Op de foto zien we een medewerker van ISMH op de plek die
+            tegenwoordig de zolder is van de woning aan Hoge Gouwe 31. Foto van
+            Wim Jans.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20240115_151255.webp"
+            data-pswp-srcset="
         resized/20240115_151255-320w.webp 320w,
         resized/20240115_151255-640w.webp 640w,
         resized/20240115_151255-768w.webp 768w,
@@ -205,13 +371,26 @@
         resized/20240115_151255-1440w.webp 1440w,
         resized/20240115_151255-1600w.webp 1600w,
         resized/20240115_151255-1920w.webp 1920w,
-      " data-pswp-width="2528" data-pswp-height="3646" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20240115_151255-640w.webp" />
-      </a>
-      <figcaption>Gemaakt tijdens de periode dat het pand als kantoor werd gebruikt. De foto toont enkele glas-in-loodramen in de voorgevel en de zolder van Hoge Gouwe 31. Foto van Wim Jans.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20240115_151314.webp" data-pswp-srcset="
+      "
+            data-pswp-width="2528"
+            data-pswp-height="3646"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20240115_151255-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Gemaakt tijdens de periode dat het pand als kantoor werd gebruikt.
+            De foto toont enkele glas-in-loodramen in de voorgevel en de zolder
+            van Hoge Gouwe 31. Foto van Wim Jans.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20240115_151314.webp"
+            data-pswp-srcset="
         resized/20240115_151314-320w.webp 320w,
         resized/20240115_151314-640w.webp 640w,
         resized/20240115_151314-768w.webp 768w,
@@ -220,13 +399,27 @@
         resized/20240115_151314-1440w.webp 1440w,
         resized/20240115_151314-1600w.webp 1600w,
         resized/20240115_151314-1920w.webp 1920w,
-      " data-pswp-width="4479" data-pswp-height="1663" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20240115_151314-640w.webp" />
-      </a>
-      <figcaption>Gemaakt tijdens de periode dat het gebouw als kantoor werd gebruikt. Op de foto zien we een medewerker van ISMH op de plek die tegenwoordig de zolder is van de woning aan Hoge Gouwe 31. Foto van Wim Jans.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/20240115_151324.webp" data-pswp-srcset="
+      "
+            data-pswp-width="4479"
+            data-pswp-height="1663"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20240115_151314-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Gemaakt tijdens de periode dat het gebouw als kantoor werd gebruikt.
+            Op de foto zien we een medewerker van ISMH op de plek die
+            tegenwoordig de zolder is van de woning aan Hoge Gouwe 31. Foto van
+            Wim Jans.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/20240115_151324.webp"
+            data-pswp-srcset="
         resized/20240115_151324-320w.webp 320w,
         resized/20240115_151324-640w.webp 640w,
         resized/20240115_151324-768w.webp 768w,
@@ -235,13 +428,29 @@
         resized/20240115_151324-1440w.webp 1440w,
         resized/20240115_151324-1600w.webp 1600w,
         resized/20240115_151324-1920w.webp 1920w,
-      " data-pswp-width="3812" data-pswp-height="2544" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/20240115_151324-640w.webp" />
-      </a>
-      <figcaption>Gemaakt tijdens de periode dat het pand als kantoor werd gebruikt. Op de foto zijn enkele bezoekers te zien op het dak, dat vroeger als speelplein diende. Tegenwoordig zijn op dit dak drie opbouwen te vinden die bij de gesplitste woningen eronder (Peperstraat 16B, 16C en 16D) horen. Op de achtergrond zie je het dak van Hoge Gouwe 31, met het kruis erop. Foto van Wim Jans.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/2011-0151.webp" data-pswp-srcset="
+      "
+            data-pswp-width="3812"
+            data-pswp-height="2544"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/20240115_151324-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Gemaakt tijdens de periode dat het pand als kantoor werd gebruikt.
+            Op de foto zijn enkele bezoekers te zien op het dak, dat vroeger als
+            speelplein diende. Tegenwoordig zijn op dit dak drie opbouwen te
+            vinden die bij de gesplitste woningen eronder (Peperstraat 16B, 16C
+            en 16D) horen. Op de achtergrond zie je het dak van Hoge Gouwe 31,
+            met het kruis erop. Foto van Wim Jans.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/2011-0151.webp"
+            data-pswp-srcset="
         resized/2011-0151-320w.webp 320w,
         resized/2011-0151-640w.webp 640w,
         resized/2011-0151-768w.webp 768w,
@@ -250,13 +459,27 @@
         resized/2011-0151-1440w.webp 1440w,
         resized/2011-0151-1600w.webp 1600w,
         resized/2011-0151-1920w.webp 1920w,
-      " data-pswp-width="3500" data-pswp-height="2556" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/2011-0151-640w.webp" />
-      </a>
-      <figcaption>Foto uit de beeldbank van NIMH, waarop het weeshuis naast de Gouwekerk te zien is. Het is duidelijk dat het hier nog om het weeshuis gaat door het ontbreken van het speelplein op het dak en de vermoedelijke datering uit 1928.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/2011-0148.webp" data-pswp-srcset="
+      "
+            data-pswp-width="3500"
+            data-pswp-height="2556"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/2011-0151-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Foto uit de beeldbank van NIMH, waarop het weeshuis naast de
+            Gouwekerk te zien is. Het is duidelijk dat het hier nog om het
+            weeshuis gaat door het ontbreken van het speelplein op het dak en de
+            vermoedelijke datering uit 1928.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/2011-0148.webp"
+            data-pswp-srcset="
         resized/2011-0148-320w.webp 320w,
         resized/2011-0148-640w.webp 640w,
         resized/2011-0148-768w.webp 768w,
@@ -265,13 +488,27 @@
         resized/2011-0148-1440w.webp 1440w,
         resized/2011-0148-1600w.webp 1600w,
         resized/2011-0148-1920w.webp 1920w,
-      " data-pswp-width="3500" data-pswp-height="2506" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/2011-0148-640w.webp" />
-      </a>
-      <figcaption>Foto uit de beeldbank van NIMH, waarop de kleuterschool naast de Gouwekerk te zien is. Het betreft de kleuterschool, zoals blijkt uit het speelplein op het dak en de vermoedelijke datering tussen 1932 en 1940.</figcaption>
-    </figure>
-    <figure class="col-12 col-md-4">
-      <a href="resized/2011-0147.webp" data-pswp-srcset="
+      "
+            data-pswp-width="3500"
+            data-pswp-height="2506"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/2011-0148-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Foto uit de beeldbank van NIMH, waarop de kleuterschool naast de
+            Gouwekerk te zien is. Het betreft de kleuterschool, zoals blijkt uit
+            het speelplein op het dak en de vermoedelijke datering tussen 1932
+            en 1940.
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4">
+          <a
+            href="resized/2011-0147.webp"
+            data-pswp-srcset="
         resized/2011-0147-320w.webp 320w,
         resized/2011-0147-640w.webp 640w,
         resized/2011-0147-768w.webp 768w,
@@ -280,72 +517,87 @@
         resized/2011-0147-1440w.webp 1440w,
         resized/2011-0147-1600w.webp 1600w,
         resized/2011-0147-1920w.webp 1920w,
-      " data-pswp-width="3500" data-pswp-height="2526" target="_blank">
-        <img class="figure-img img-thumbnail" src="resized/2011-0147-640w.webp" />
-      </a>
-      <figcaption>Foto uit de beeldbank van NIMH, waarop de kleuterschool naast de Gouwekerk te zien is. Het betreft de kleuterschool, zoals blijkt uit het speelplein op het dak en de vermoedelijke datering tussen 1935 en 1940.</figcaption>
-    </figure>
-  </section>
+      "
+            data-pswp-width="3500"
+            data-pswp-height="2526"
+            target="_blank"
+          >
+            <img
+              class="figure-img img-thumbnail"
+              src="resized/2011-0147-640w.webp"
+            />
+          </a>
+          <figcaption>
+            Foto uit de beeldbank van NIMH, waarop de kleuterschool naast de
+            Gouwekerk te zien is. Het betreft de kleuterschool, zoals blijkt uit
+            het speelplein op het dak en de vermoedelijke datering tussen 1935
+            en 1940.
+          </figcaption>
+        </figure>
+      </section>
+    </main>
 
-</main>
+    <script
+      defer
+      src="https://www.googletagmanager.com/gtag/js?id=G-Q5YN1ZCS28"
+    ></script>
+    <script defer type="module">
+      import '/src/sentry.js'
+      import Masonry from 'masonry-layout'
+      import PhotoSwipeLightbox from 'photoswipe/lightbox'
+      import PhotoSwipeFullscreen from '/src/photoswipe-fullscreen.js'
 
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q5YN1ZCS28"></script>
-<script defer type="module">
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: 'section.gallery',
+        children: 'figure > a:first-child',
+        pswpModule: () => import('photoswipe'),
+        bgOpacity: 0.9,
+        loop: false,
+      })
 
-  import '/src/sentry.js'
-  import Masonry from 'masonry-layout'
-  import PhotoSwipeLightbox from 'photoswipe/lightbox'
-  import PhotoSwipeFullscreen from '/src/photoswipe-fullscreen.js'
+      lightbox.on('uiRegister', () =>
+        lightbox.pswp.ui.registerElement({
+          name: 'custom-caption',
+          order: 9,
+          isButton: false,
+          appendTo: 'root',
+          html: 'Caption text',
+          onInit: (el, pswp) =>
+            lightbox.pswp.on('change', () => {
+              const currSlideElement = lightbox.pswp.currSlide.data.element
 
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: 'section.gallery',
-    children: 'figure > a:first-child',
-    pswpModule: () => import('photoswipe'),
-    bgOpacity: 0.9,
-    loop: false,
-  })
+              let captionHTML = ''
 
-  lightbox.on('uiRegister', () => lightbox.pswp.ui.registerElement({
-    name: 'custom-caption',
-    order: 9,
-    isButton: false,
-    appendTo: 'root',
-    html: 'Caption text',
-    onInit: (el, pswp) => lightbox.pswp.on('change', () => {
-      const currSlideElement = lightbox.pswp.currSlide.data.element
+              if (currSlideElement) {
+                const captionElement = currSlideElement.nextElementSibling
 
-      let captionHTML = ''
+                if (captionElement) {
+                  captionHTML = captionElement.innerHTML
+                }
+              }
 
-      if (currSlideElement) {
-        const captionElement = currSlideElement.nextElementSibling
+              el.innerHTML = captionHTML || ''
+            }),
+        }),
+      )
 
-        if (captionElement) {
-          captionHTML = captionElement.innerHTML;
-        }
+      const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox)
+
+      lightbox.init()
+
+      window.addEventListener('load', () => {
+        new Masonry('section.gallery.row', {
+          itemSelector: 'figure',
+          percentPosition: true,
+        })
+      })
+
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
       }
-
-      el.innerHTML = captionHTML || ''
-    })
-  }))
-
-  const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox)
-
-  lightbox.init()
-
-  window.addEventListener('load', () => {
-    new Masonry('section.gallery.row', {
-      itemSelector: 'figure',
-      percentPosition: true,
-    })
-  })
-
-  window.dataLayer = window.dataLayer || []
-  function gtag() { dataLayer.push(arguments) }
-  gtag('js', new Date())
-  gtag('config', 'G-Q5YN1ZCS28')
-
-</script>
-
-</body>
-
+      gtag('js', new Date())
+      gtag('config', 'G-Q5YN1ZCS28')
+    </script>
+  </body>
 </html>

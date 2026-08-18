@@ -14,18 +14,21 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // Root pages
-        index:    resolve(root, 'index.html'),
-        fotos:    resolve(root, 'fotos.html'),
+        index: resolve(root, 'index.html'),
+        fotos: resolve(root, 'fotos.html'),
         tijdlijn: resolve(root, 'tijdlijn.html'),
-        bronnen:  resolve(root, 'bronnen.html'),
-        contact:  resolve(root, 'contact.html'),
-        detijd:   resolve(root, 'detijd.18940116.html'),
+        bronnen: resolve(root, 'bronnen.html'),
+        contact: resolve(root, 'contact.html'),
+        detijd: resolve(root, 'detijd.18940116.html'),
         // Photo gallery sub-pages
-        'fotos-dakterras':          resolve(root, 'fotos/dakterras/index.html'),
-        'fotos-keuken':             resolve(root, 'fotos/keuken/index.html'),
-        'fotos-tuin':               resolve(root, 'fotos/tuin/index.html'),
-        'fotos-renovatie-exterieur': resolve(root, 'fotos/renovatie-exterieur/index.html'),
-        'fotos-oude-doos':          resolve(root, 'fotos/oude-doos/index.html'),
+        'fotos-dakterras': resolve(root, 'fotos/dakterras/index.html'),
+        'fotos-keuken': resolve(root, 'fotos/keuken/index.html'),
+        'fotos-tuin': resolve(root, 'fotos/tuin/index.html'),
+        'fotos-renovatie-exterieur': resolve(
+          root,
+          'fotos/renovatie-exterieur/index.html',
+        ),
+        'fotos-oude-doos': resolve(root, 'fotos/oude-doos/index.html'),
       },
     },
   },
@@ -42,7 +45,7 @@ export default defineConfig({
         handler(html) {
           return html.replace(
             /(<img\b[^>]*)\bsrc="((?!(?:https?:|\/\/|\/|data:))[^"]+\.(?:webp|jpg|jpeg|png)[^"]*)"/gi,
-            '$1 data-preserve-src="$2"'
+            '$1 data-preserve-src="$2"',
           )
         },
       },
@@ -63,13 +66,16 @@ export default defineConfig({
     // - CNAME: must be present at the GitHub Pages domain root
     viteStaticCopy({
       targets: [
-        { src: 'fotos/dakterras/resized',          dest: 'fotos/dakterras' },
-        { src: 'fotos/keuken/resized',             dest: 'fotos/keuken' },
-        { src: 'fotos/tuin/resized',               dest: 'fotos/tuin' },
-        { src: 'fotos/renovatie-exterieur/resized', dest: 'fotos/renovatie-exterieur' },
-        { src: 'fotos/oude-doos/resized',          dest: 'fotos/oude-doos' },
-        { src: 'images',                           dest: '.' },
-        { src: 'CNAME',                            dest: '.' },
+        { src: 'fotos/dakterras/resized', dest: 'fotos/dakterras' },
+        { src: 'fotos/keuken/resized', dest: 'fotos/keuken' },
+        { src: 'fotos/tuin/resized', dest: 'fotos/tuin' },
+        {
+          src: 'fotos/renovatie-exterieur/resized',
+          dest: 'fotos/renovatie-exterieur',
+        },
+        { src: 'fotos/oude-doos/resized', dest: 'fotos/oude-doos' },
+        { src: 'images', dest: '.' },
+        { src: 'CNAME', dest: '.' },
       ],
     }),
   ],
