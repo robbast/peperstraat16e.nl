@@ -1,20 +1,154 @@
+/* ── Design tokens ─────────────────────────────────────────────────────── */
 :root {
-  --dark-red: rgba(115, 0, 0, 1);
+  --dark-red:   rgba(115, 0, 0, 1);
   --bright-red: rgba(185, 0, 0, 1);
+  --header-bg:  #2b0a0a;   /* very dark red-brown */
+  --header-fg:  #f5e6d6;   /* warm off-white */
+  --body-bg:    #faf7f4;   /* warm page background */
+  --nav-active-bg: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+body {
+  background-color: var(--body-bg);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #1a1008;
+  line-height: 1.75;
+}
+
+/* Headings in a clean sans-serif for contrast */
+h1, h2, h3, h4, h5, h6 {
+  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 a {
   color: var(--bright-red);
+  text-underline-offset: 3px;
 }
 
-div.card {
-  background-color: rgba(0, 0, 0, 0.01);
-}
-
-header mark {
+a:hover {
   color: var(--dark-red);
 }
 
+/* ── Header ─────────────────────────────────────────────────────────────── */
+header.site-header {
+  background-color: var(--header-bg);
+  color: var(--header-fg);
+  border-bottom: 3px solid var(--bright-red);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Logo: tint to warm off-white on dark background */
+header.site-header svg {
+  fill: var(--header-fg);
+}
+
+header.site-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  margin: 0;
+  color: var(--header-fg);
+  line-height: 1.1;
+}
+
+header.site-header h2 {
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  margin: 0;
+  color: rgba(245, 230, 214, 0.7);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+header mark {
+  background: none;
+  color: #f8b400;   /* warm gold accent on dark background */
+  padding: 0;
+}
+
+/* ── Navigation ─────────────────────────────────────────────────────────── */
+header.site-header .navbar {
+  gap: 0.15rem;
+}
+
+header.site-header .nav-link {
+  color: rgba(245, 230, 214, 0.82) !important;
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+header.site-header .nav-link:hover {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+header.site-header .nav-link.active {
+  color: #fff !important;
+  background-color: var(--nav-active-bg);
+  font-weight: 600;
+}
+
+/* Remove default Bootstrap underline-nav decorations */
+header.site-header .nav-underline .nav-link.active {
+  border-bottom: none;
+}
+
+header.site-header .nav-underline .nav-link:hover,
+header.site-header .nav-underline .nav-link:focus {
+  border-bottom: none;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+div.card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Alerts ─────────────────────────────────────────────────────────────── */
+.alert {
+  border-radius: 10px;
+  border-left-width: 4px;
+}
+
+/* ── Video embed ────────────────────────────────────────────────────────── */
+.video-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Main content ───────────────────────────────────────────────────────── */
+main {
+  max-width: 860px;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.site-footer {
+  background-color: var(--header-bg);
+  color: rgba(245, 230, 214, 0.6);
+  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 0.82rem;
+  padding: 1.25rem 0;
+  margin-top: 3rem;
+  border-top: 3px solid var(--bright-red);
+}
+
+.site-footer a {
+  color: rgba(245, 230, 214, 0.75);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--header-fg);
+}
+
+/* ── PhotoSwipe caption ─────────────────────────────────────────────────── */
 .pswp__custom-caption {
   background: rgba(0, 0, 0, 0.6);
   font-size: 16px;
@@ -30,6 +164,7 @@ header mark {
   transform: translateX(-50%);
 }
 
+/* ── References ─────────────────────────────────────────────────────────── */
 ul.references > li:target, ul.references > li:target::marker {
   color: var(--dark-red);
 }
