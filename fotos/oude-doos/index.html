@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="../../node_modules/photoswipe/dist/photoswipe.css">
   <link rel="stylesheet" href="../../stylesheet.css">
 
-  <script src="https://js.sentry-cdn.com/f7f1302daf526d2130b03eea44bc5a02.min.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -293,9 +292,10 @@
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q5YN1ZCS28"></script>
 <script defer type="module">
 
+  import '/src/sentry.js'
   import Masonry from 'masonry-layout'
   import PhotoSwipeLightbox from 'photoswipe/lightbox'
-  import PhotoSwipeFullscreen from 'photoswipe-fullscreen'
+  import PhotoSwipeFullscreen from '/src/photoswipe-fullscreen.js'
 
   const lightbox = new PhotoSwipeLightbox({
     gallery: 'section.gallery',

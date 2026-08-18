@@ -12,7 +12,7 @@ All pages are plain HTML files built with **Vite** and deployed to GitHub Pages 
 - **Photo galleries**: `fotos/<category>/index.html`, each with original JPGs and pre-generated WebP variants in `fotos/<category>/resized/`
 - **Shared assets**: `stylesheet.css`, `favicon.svg`
 - **Building drawings**: `images/bouwtekeningen/` (PNG files linked via `<a href>` in `tijdlijn.html`)
-- **Local package**: `packages/photoswipe-fullscreen/` — vendored ESM plugin (original upstream repo no longer exists)
+- **Local files**: `packages/` directory no longer exists. `src/` contains `sentry.js`, `photoswipe-fullscreen.js` (vendored ESM plugin, upstream repo no longer exists), and any future shared modules.
 
 ## Build system
 
@@ -35,13 +35,21 @@ Installed via npm, bundled by Vite — **not committed**, **not served directly*
 | `bootstrap-icons` | CSS via `<link>` in HTML (tijdlijn.html only) |
 | `photoswipe` | `import … from 'photoswipe/lightbox'` and `import('photoswipe')` |
 | `masonry-layout` | `import Masonry from 'masonry-layout'` (oude-doos only) |
-| `photoswipe-fullscreen` | `import … from 'photoswipe-fullscreen'` (local package at `packages/`) |
+| `photoswipe-fullscreen` | `import … from '/src/photoswipe-fullscreen.js'` (local file in `src/`) |
 
 External scripts (not bundled):
 - Google Analytics (`G-Q5YN1ZCS28`) — deferred script at bottom of each page
-- Sentry (`f7f1302daf526d2130b03eea44bc5a02`) — error tracking, loaded in `<head>`
+- **Sentry**: `@sentry/browser` — bundled via `src/sentry.js` (DSN hardcoded, see *Error tracking* below)
 
 **CSS links** in HTML use relative paths to `node_modules/` (e.g., `../../node_modules/bootstrap/dist/css/bootstrap.min.css` from gallery sub-pages). Vite resolves and bundles these during build. Do not convert them to bare specifiers in `<link href>` — Vite only resolves bare specifiers in JS `import` statements.
+
+## Error tracking (Sentry)
+
+`src/sentry.js` initialises `@sentry/browser`. The DSN is hardcoded in that file — Sentry browser DSNs are intentionally public (they appear in the client bundle regardless). Every HTML page imports it: pages with an existing `<script type="module">` use `import '/src/sentry.js'`; pages without one have `<script type="module" src="src/sentry.js"></script>`.
+
+## Dependency updates (Dependabot)
+
+`.github/dependabot.yml` runs weekly (Monday) for both **npm** and **github-actions** ecosystems. `vite` and `vite-plugin-static-copy` are grouped into a single PR to avoid noise.
 
 ## Adding photos
 
