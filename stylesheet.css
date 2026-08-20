@@ -62,7 +62,7 @@ header.site-header {
   box-shadow: 0 2px 12px rgb(59 42 38 / 16%);
 }
 
-/* Logo: tint to warm off-white on dark background */
+/* Logo: tint to warm dark-brown on the light header background */
 header.site-header svg {
   fill: var(--header-fg);
 }
