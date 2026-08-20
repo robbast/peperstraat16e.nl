@@ -1,19 +1,26 @@
 /* ── Design tokens ─────────────────────────────────────────────────────── */
 :root {
-  --dark-red: rgb(115 0 0 / 100%);
-  --bright-red: rgb(185 0 0 / 100%);
-  --header-bg: #2b0a0a; /* very dark red-brown */
-  --header-fg: #f5e6d6; /* warm off-white */
-  --body-bg: #faf7f4; /* warm page background */
-  --nav-active-bg: rgb(255 255 255 / 18%);
+  --dark-red: rgb(117 66 57 / 100%);
+  --bright-red: rgb(161 101 89 / 100%);
+  --header-bg: #eadfd8;
+  --header-fg: #3b2a26;
+  --body-bg: #f8f6f3;
+  --nav-active-bg: rgb(59 42 38 / 12%);
 }
 
 /* ── Base ───────────────────────────────────────────────────────────────── */
 body {
   background-color: var(--body-bg);
-  font-family: Georgia, 'Times New Roman', serif;
-  color: #1a1008;
-  line-height: 1.75;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  color: #2f2624;
+  line-height: 1.65;
   min-height: 100vh;
 }
 
@@ -26,19 +33,14 @@ body.site-page {
   flex: 1 0 auto;
 }
 
-/* Headings in a clean sans-serif for contrast */
+/* Headings with stronger contrast */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Arial,
-    sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -57,7 +59,7 @@ header.site-header {
   background-color: var(--header-bg);
   color: var(--header-fg);
   border-bottom: 3px solid var(--bright-red);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 35%);
+  box-shadow: 0 2px 12px rgb(59 42 38 / 16%);
 }
 
 /* Logo: tint to warm off-white on dark background */
@@ -75,7 +77,7 @@ header.site-header h1 {
 header.site-header h2 {
   font-size: clamp(0.85rem, 2vw, 1.1rem);
   margin: 0;
-  color: rgb(245 230 214 / 70%);
+  color: rgb(59 42 38 / 72%);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -83,7 +85,7 @@ header.site-header h2 {
 
 header mark {
   background: none;
-  color: #f8b400; /* warm gold accent on dark background */
+  color: var(--dark-red);
   padding: 0;
 }
 
@@ -93,7 +95,7 @@ header.site-header .navbar {
 }
 
 header.site-header .nav-link {
-  color: rgb(245 230 214 / 82%) !important;
+  color: rgb(59 42 38 / 82%) !important;
   border-radius: 6px;
   padding: 0.3rem 0.75rem;
   transition:
@@ -109,12 +111,12 @@ header.site-header .nav-link {
 }
 
 header.site-header .nav-link:hover {
-  color: #fff !important;
-  background-color: rgb(255 255 255 / 12%);
+  color: #2e211d !important;
+  background-color: rgb(59 42 38 / 8%);
 }
 
 header.site-header .nav-link.active {
-  color: #fff !important;
+  color: #2e211d !important;
   background-color: var(--nav-active-bg);
   font-weight: 600;
 }
@@ -160,7 +162,7 @@ main {
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .site-footer {
   background-color: var(--header-bg);
-  color: rgb(245 230 214 / 60%);
+  color: rgb(59 42 38 / 72%);
   font-family:
     system-ui,
     -apple-system,
@@ -174,12 +176,12 @@ main {
 }
 
 .site-footer a {
-  color: rgb(245 230 214 / 75%);
+  color: rgb(59 42 38 / 85%);
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: var(--header-fg);
+  color: #2e211d;
 }
 
 /* ── PhotoSwipe caption ─────────────────────────────────────────────────── */
