@@ -60,14 +60,7 @@ export default defineConfig({
     // - CNAME: must be present at the GitHub Pages domain root
     viteStaticCopy({
       targets: [
-        { src: 'fotos/dakterras/resized/*', dest: 'fotos/dakterras/resized' },
-        { src: 'fotos/keuken/resized/*', dest: 'fotos/keuken/resized' },
-        { src: 'fotos/tuin/resized/*', dest: 'fotos/tuin/resized' },
-        {
-          src: 'fotos/renovatie-exterieur/resized/*',
-          dest: 'fotos/renovatie-exterieur/resized',
-        },
-        { src: 'fotos/oude-doos/resized/*', dest: 'fotos/oude-doos/resized' },
+        { src: 'fotos/*/resized/*', dest: '.' },
         { src: 'images', dest: '.' },
         { src: 'CNAME', dest: '.' },
       ],
