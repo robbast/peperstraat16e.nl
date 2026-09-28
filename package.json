@@ -12,7 +12,7 @@
     "fix": "npm run lint:html && npm run lint:css -- --fix && npm run lint:js -- --fix && npm run format"
   },
   "dependencies": {
-    "@sentry/browser": "^10.75.0",
+    "@sentry/browser": "^11.0.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "masonry-layout": "^4.2.2",
