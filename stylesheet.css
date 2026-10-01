@@ -60,6 +60,11 @@ header.site-header {
   color: var(--header-fg);
   border-bottom: 3px solid var(--bright-red);
   box-shadow: 0 2px 12px rgb(59 42 38 / 16%);
+  padding: 0;
+}
+
+header.site-header .container {
+  padding: 0;
 }
 
 /* Logo: tint to warm dark-brown on the light header background */
@@ -108,6 +113,7 @@ header.site-header .nav-link {
     Arial,
     sans-serif;
   font-size: 1rem;
+  border-bottom: none;
 }
 
 header.site-header .nav-link:hover {
@@ -118,7 +124,7 @@ header.site-header .nav-link:hover {
 header.site-header .nav-link.active {
   color: #2e211d !important;
   background-color: var(--nav-active-bg);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 /* Remove default Bootstrap underline-nav decorations */
