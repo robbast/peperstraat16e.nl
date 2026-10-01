@@ -14,9 +14,9 @@ updates:
           - vite-plugin-static-copy
       minor-patch:
         update-types:
-          - "minor"
-          - "patch"
-          
+          - 'minor'
+          - 'patch'
+
   - package-ecosystem: github-actions
     directory: /
     schedule:
