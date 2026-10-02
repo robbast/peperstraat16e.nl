@@ -1,11 +1,105 @@
 /* ── Design tokens ─────────────────────────────────────────────────────── */
 :root {
+  /* Brand colors */
   --dark-red: rgb(117 66 57 / 100%);
   --bright-red: rgb(161 101 89 / 100%);
+
+  /* Header & footer palette */
   --header-bg: #eadfd8;
   --header-fg: #3b2a26;
   --body-bg: #f8f6f3;
-  --nav-active-bg: rgb(59 42 38 / 12%);
+
+  /* Text colors */
+  --text-primary: #2f2624;
+  --text-dark: #2e211d;
+  --text-secondary: rgb(59 42 38 / 82%);
+  --text-muted: rgb(59 42 38 / 72%);
+
+  /* Opacity scale */
+  --opacity-subtle: 8%;
+  --opacity-light: 12%;
+  --opacity-medium: 16%;
+  --opacity-muted: 60%;
+
+  /* UI states & components */
+  --nav-active-bg: rgb(59 42 38 / var(--opacity-light));
+  --nav-hover-bg: rgb(59 42 38 / var(--opacity-subtle));
+
+  /* Shadows & borders */
+  --border-light: rgb(0 0 0 / var(--opacity-subtle));
+  --shadow-header: rgb(59 42 38 / var(--opacity-medium));
+  --overlay-dark: rgb(0 0 0 / var(--opacity-muted));
+}
+
+/* ── Dark mode palette ─────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Header & footer palette */
+    --header-bg: #2a2320;
+    --header-fg: #e8ddd6;
+    --body-bg: #1a1815;
+
+    /* Text colors */
+    --text-primary: #e8ddd6;
+    --text-dark: #f0e6dd;
+    --text-secondary: rgb(232 221 214 / 82%);
+    --text-muted: rgb(232 221 214 / 85%);
+
+    /* UI states & components */
+    --nav-active-bg: rgb(232 221 214 / var(--opacity-light));
+    --nav-hover-bg: rgb(232 221 214 / var(--opacity-subtle));
+
+    /* Shadows & borders */
+    --border-light: rgb(255 255 255 / var(--opacity-subtle));
+    --shadow-header: rgb(0 0 0 / 30%);
+    --overlay-dark: rgb(0 0 0 / 80%);
+  }
+}
+
+/* ── Dark mode override (manual toggle) ──────────────────────────────── */
+html[data-bs-theme='dark'] {
+  /* Brand colors */
+  --header-bg: #2a2320;
+  --header-fg: #e8ddd6;
+  --body-bg: #1a1815;
+
+  /* Text colors */
+  --text-primary: #e8ddd6;
+  --text-dark: #f0e6dd;
+  --text-secondary: rgb(232 221 214 / 82%);
+  --text-muted: rgb(232 221 214 / 85%);
+
+  /* UI states & components */
+  --nav-active-bg: rgb(232 221 214 / var(--opacity-light));
+  --nav-hover-bg: rgb(232 221 214 / var(--opacity-subtle));
+
+  /* Shadows & borders */
+  --border-light: rgb(255 255 255 / var(--opacity-subtle));
+  --shadow-header: rgb(0 0 0 / 30%);
+  --overlay-dark: rgb(0 0 0 / 80%);
+}
+
+/* ── Light mode override (manual toggle) ─────────────────────────────── */
+html[data-bs-theme='light'] {
+  /* Brand colors */
+  --header-bg: #eadfd8;
+  --header-fg: #3b2a26;
+  --body-bg: #f8f6f3;
+
+  /* Text colors */
+  --text-primary: #2f2624;
+  --text-dark: #2e211d;
+  --text-secondary: rgb(59 42 38 / 82%);
+  --text-muted: rgb(59 42 38 / 72%);
+
+  /* UI states & components */
+  --nav-active-bg: rgb(59 42 38 / var(--opacity-light));
+  --nav-hover-bg: rgb(59 42 38 / var(--opacity-subtle));
+
+  /* Shadows & borders */
+  --border-light: rgb(0 0 0 / var(--opacity-subtle));
+  --shadow-header: rgb(59 42 38 / var(--opacity-medium));
+  --overlay-dark: rgb(0 0 0 / var(--opacity-muted));
 }
 
 /* ── Base ───────────────────────────────────────────────────────────────── */
@@ -23,7 +117,7 @@ body {
     'Helvetica Neue',
     Arial,
     sans-serif;
-  color: #2f2624;
+  color: var(--text-primary);
   line-height: 1.65;
   min-height: 100vh;
 }
@@ -63,17 +157,25 @@ header.site-header {
   background-color: var(--header-bg);
   color: var(--header-fg);
   border-bottom: 3px solid var(--bright-red);
-  box-shadow: 0 2px 12px rgb(59 42 38 / 16%);
+  box-shadow: 0 2px 12px var(--shadow-header);
   padding: 0;
 }
 
 header.site-header .container {
   padding: 0;
+  position: relative;
 }
 
-/* Logo: tint to warm dark-brown on the light header background */
-header.site-header svg {
-  fill: var(--header-fg);
+/* Logo: responsive sizing */
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+@media (width >= 768px) {
+  .logo-img {
+    width: 300px;
+  }
 }
 
 header.site-header h1 {
@@ -86,7 +188,7 @@ header.site-header h1 {
 header.site-header h2 {
   font-size: clamp(0.85rem, 2vw, 1.1rem);
   margin: 0;
-  color: rgb(59 42 38 / 72%);
+  color: var(--text-muted);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -104,7 +206,7 @@ header.site-header .navbar {
 }
 
 header.site-header .nav-link {
-  color: rgb(59 42 38 / 82%) !important;
+  color: var(--text-secondary) !important;
   border-radius: 6px;
   padding: 0.3rem 0.75rem;
   transition:
@@ -121,12 +223,12 @@ header.site-header .nav-link {
 }
 
 header.site-header .nav-link:hover {
-  color: #2e211d !important;
-  background-color: rgb(59 42 38 / 8%);
+  color: var(--text-dark) !important;
+  background-color: var(--nav-hover-bg);
 }
 
 header.site-header .nav-link.active {
-  color: #2e211d !important;
+  color: var(--text-dark) !important;
   background-color: var(--nav-active-bg);
   font-weight: 400;
 }
@@ -143,10 +245,9 @@ header.site-header .nav-underline .nav-link:focus {
 
 /* ── Cards ──────────────────────────────────────────────────────────────── */
 div.card {
-  background-color: #fff;
-  border: 1px solid rgb(0 0 0 / 8%);
+  border: 1px solid var(--border-light);
   border-radius: 10px;
-  box-shadow: 0 1px 6px rgb(0 0 0 / 6%);
+  box-shadow: 0 1px 6px var(--border-light);
 }
 
 /* ── Alerts ─────────────────────────────────────────────────────────────── */
@@ -172,7 +273,7 @@ main {
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .site-footer {
   background-color: var(--header-bg);
-  color: rgb(59 42 38 / 72%);
+  color: var(--text-muted);
   font-family:
     system-ui,
     -apple-system,
@@ -181,22 +282,22 @@ main {
     sans-serif;
   font-size: 0.82rem;
   padding: 1.25rem 0;
-  margin-top: 3rem;
+  margin-top: 1rem;
   border-top: 3px solid var(--bright-red);
 }
 
 .site-footer a {
-  color: rgb(59 42 38 / 85%);
+  color: var(--text-muted);
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #2e211d;
+  color: var(--text-dark);
 }
 
 /* ── PhotoSwipe caption ─────────────────────────────────────────────────── */
 .pswp__custom-caption {
-  background: rgb(0 0 0 / 60%);
+  background: var(--overlay-dark);
   font-size: 16px;
   color: #fff;
   text-shadow: 1px 1px 1px black;
@@ -223,4 +324,50 @@ ul.references > li:target::marker {
 
 blockquote.blockquote {
   font-size: inherit !important;
+}
+
+/* ── Theme toggle button ────────────────────────────────────────────────── */
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--header-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  align-self: flex-start;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--dark-red);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.theme-toggle i {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* ── Dark mode adjustments ─────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .breadcrumb-item.active {
+    color: var(--text-muted) !important;
+  }
+
+  small.text-muted {
+    color: var(--text-muted) !important;
+  }
 }

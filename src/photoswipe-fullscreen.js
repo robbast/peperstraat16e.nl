@@ -66,13 +66,13 @@ class PhotoSwipeFullscreen {
     let elementFS
     let changeEvent
     let errorEvent
-    if (document.fullscreenEnabled) {
+    if (document.documentElement.fullscreenEnabled) {
       enterFS = 'requestFullscreen'
       exitFS = 'exitFullscreen'
       elementFS = 'fullscreenElement'
       changeEvent = 'fullscreenchange'
       errorEvent = 'fullscreenerror'
-    } else if (document.webkitFullscreenEnabled) {
+    } else if (document.documentElement.webkitFullscreenEnabled) {
       enterFS = 'webkitRequestFullscreen'
       exitFS = 'webkitExitFullscreen'
       elementFS = 'webkitFullscreenElement'
