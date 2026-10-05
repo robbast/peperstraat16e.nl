@@ -8,7 +8,7 @@ Static HTML website (Dutch) for a historic home at Peperstraat 16e, Gouda — a 
 
 All pages are plain HTML files built with **Vite** and deployed to GitHub Pages via GitHub Actions. Source HTML files are the Vite entry points; `dist/` is the build output.
 
-- **Root pages**: `index.html`, `fotos.html`, `tijdlijn.html`, `bronnen.html`, `contact.html`, `detijd.18940116.html`
+- **Root pages**: `index.html`, `fotos.html`, `tijdlijn.html`, `bronnen.html`, `contact.html`
 - **Photo galleries**: `fotos/<category>/index.html`, each with original JPGs and pre-generated WebP variants in `fotos/<category>/resized/`
 - **Shared assets**: `stylesheet.css`, `favicon.svg`
 - **Building drawings**: `images/bouwtekeningen/` (PNG files linked via `<a href>` in `tijdlijn.html`)
