@@ -149,46 +149,9 @@
       import '/src/sentry.js'
       import '/src/analytics.js'
       import '/src/theme-toggle.js'
-      import PhotoSwipeLightbox from 'photoswipe/lightbox'
-      import PhotoSwipeFullscreen from '/src/photoswipe-fullscreen.js'
+      import { initGallery } from '/src/gallery.js'
 
-      const lightbox = new PhotoSwipeLightbox({
-        gallery: 'section.gallery',
-        children: 'a[data-pswp-width]',
-        pswpModule: () => import('photoswipe'),
-        bgOpacity: 0.9,
-        loop: false,
-      })
-
-      lightbox.on('uiRegister', () =>
-        lightbox.pswp.ui.registerElement({
-          name: 'custom-caption',
-          order: 9,
-          isButton: false,
-          appendTo: 'root',
-          html: 'Caption text',
-          onInit: (el, pswp) =>
-            lightbox.pswp.on('change', () => {
-              const currSlideElement = lightbox.pswp.currSlide.data.element
-
-              let captionHTML = ''
-
-              if (currSlideElement) {
-                const captionElement = currSlideElement.nextElementSibling
-
-                if (captionElement) {
-                  captionHTML = captionElement.innerHTML
-                }
-              }
-
-              el.innerHTML = captionHTML || ''
-            }),
-        }),
-      )
-
-      new PhotoSwipeFullscreen(lightbox)
-
-      lightbox.init()
+      initGallery('section.gallery', { captions: true })
     </script>
   </body>
 </html>
