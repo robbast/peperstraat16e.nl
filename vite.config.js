@@ -40,7 +40,7 @@ export default defineConfig({
       transformIndexHtml: {
         order: 'pre',
         handler(html) {
-          return html.replace(/(<img\b[^>]*)\bsrc="((?!(?:https?:|\/\/|\/|data:))[^"]+\.(?:webp|jpg|jpeg|png)[^"]*)"/gi, '$1 data-preserve-src="$2"')
+          return html.replace(/(<img\b[^>]*?\s)src="((?!(?:https?:|\/\/|\/|data:))[^"]+\.(?:webp|jpg|jpeg|png)[^"]*)"/gi, '$1data-preserve-src="$2"')
         },
       },
     },

@@ -10,10 +10,14 @@ export default [
     files: ['**/*.js'],
     languageOptions: {
       sourceType: 'module',
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
+      globals: globals.browser,
+    },
+  },
+  {
+    // Config files run in Node, not the browser
+    files: ['*.config.js'],
+    languageOptions: {
+      globals: globals.node,
     },
   },
 ]
