@@ -10,7 +10,7 @@ Static website (in Dutch) about a historic building at Peperstraat 16e, Gouda: b
 - **Photo galleries**: `fotos/<category>/index.html` (`dakterras`, `keuken`, `oude-doos`, `renovatie-exterieur`, `tuin`). Each folder holds the original photos and generated WebP variants in `fotos/<category>/resized/`.
 - **Building drawings**: `images/bouwtekeningen/*.png`, linked from `tijdlijn.html` via `<a href>`.
 - **Shared styles**: `stylesheet.css`, on top of Bootstrap 5.3.
-- **Logo and favicon**: `logo.svg` (header logo, the complete shield) and `favicon.svg` (browser tab, a cropped version of the shield; its own `<style>` switches the colour with the browser's light/dark theme and thickens the lines so it stays readable at 16px).
+- **Logo and favicon**: `logo.svg` (header logo, the complete shield) and `favicon.svg` (browser tab: "16e" in Georgia Bold, converted to a path so it doesn't depend on installed fonts; its own `<style>` switches between the light- and dark-theme brand red with the browser's theme).
 - **Scripts** in `src/`:
   - `sentry.js`: error tracking (see below)
   - `analytics.js`: Google Analytics (`G-Q5YN1ZCS28`), loads gtag.js at runtime
