@@ -18,11 +18,14 @@
     <link rel="stylesheet" href="../../stylesheet.css" />
     <script>
       // Set the theme before first paint so Bootstrap and our tokens agree and nothing flashes; see src/theme-toggle.js
-      try {
-        var theme = localStorage.getItem('peperstraat-theme')
-      } catch {}
-      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      document.documentElement.setAttribute('data-bs-theme', theme)
+      ;(() => {
+        let theme
+        try {
+          theme = localStorage.getItem('peperstraat-theme')
+        } catch {}
+        if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-bs-theme', theme)
+      })()
     </script>
   </head>
 
