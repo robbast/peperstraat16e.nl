@@ -35,7 +35,8 @@ function applyTheme(theme) {
 function getCurrentTheme() {
   const stored = getStoredTheme()
 
-  if (stored) {
+  // Ignore anything we didn't store ourselves, like the inline <head> script does
+  if (stored === DARK || stored === LIGHT || stored === SYSTEM) {
     return stored
   }
 
@@ -109,7 +110,7 @@ function init() {
 
   // Listen for system preference changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if (!getStoredTheme()) {
+    if (getCurrentTheme() === SYSTEM) {
       applyTheme(SYSTEM)
     }
     updateToggleButton()
