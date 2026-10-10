@@ -7,8 +7,8 @@ set -euo pipefail
 # for f in fotos/dir/*.jpg; do ./srcset.sh "$f" >> htmlmarkup.html; done
 #
 
-filename="$1"
-path="${filename%/*}"
+filename="${1:?usage: ./srcset.sh fotos/<category>/photo.jpg}"
+path="$(dirname "$filename")"
 file_with_ext="${filename##*/}"
 file="${file_with_ext%.*}"
 # Spaces would break the srcset attributes, so replace them in the output filenames
@@ -19,9 +19,9 @@ mkdir -p "${path}/resized"
 # Convert the original image to webp format, capped at 2560px on the longest side to keep the repo small
 magick "$filename" -strip -resize '2560x2560>' -quality 80 "${path}/resized/${file}.webp"
 
-# Create resized versions of the image
+# Create resized versions of the image (never wider than the original)
 for size in 320 640 768 1024 1366 1440 1600 1920; do
-  magick "$filename" -strip -adaptive-resize "$size" "${path}/resized/${file}-${size}w.webp"
+  magick "$filename" -strip -adaptive-resize "${size}>" "${path}/resized/${file}-${size}w.webp"
 done
 
 # Generate HTML markup for the image with srcset
