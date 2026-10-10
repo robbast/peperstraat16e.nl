@@ -15,7 +15,8 @@ Static website (in Dutch) about a historic building at Peperstraat 16e, Gouda: b
   - `sentry.js`: error tracking (see below)
   - `analytics.js`: Google Analytics (`G-Q5YN1ZCS28`), loads gtag.js at runtime
   - `theme-toggle.js`: light/dark/system theme toggle (see below)
-  - `photoswipe-fullscreen.js`: vendored PhotoSwipe fullscreen plugin; the upstream repo no longer exists
+  - `gallery.js`: `initGallery(selector, { captions })` sets up the PhotoSwipe lightbox, used by the gallery pages and the drawings on the timeline
+  - `photoswipe-fullscreen.js`: vendored PhotoSwipe fullscreen plugin; the upstream repo no longer exists, so it is maintained here (Dutch button title, plain `f` key only, icon follows the browser's fullscreen state)
   - `scroll-to-anchor.js`: works around Chrome mobile not scrolling to `#anchor` targets, used on `bronnen.html`
 - **Image helper**: `srcset.sh` (see _Adding photos_).
 
@@ -41,20 +42,21 @@ Run `npm run lint` before committing. CI runs it too, before the build.
 - **Static copy:** `vite-plugin-static-copy` copies `fotos/*/resized/*` (keeping its folder structure), `images/` and `CNAME` into `dist/`. The original photos are not deployed.
 - **Deploy:** `.github/workflows/deploy.yml` runs `npm ci`, `npm run lint` and `npm run build` on Node 24.
   - On a push to `main` it then deploys `dist/` with `actions/deploy-pages`. GitHub Pages is set to _Source: GitHub Actions_.
-  - On a pull request it only lints and builds, in its own concurrency group, so it never deploys.
+  - On a pull request it only lints and builds, in its own concurrency group where a newer push cancels the previous run. It never deploys.
+  - Only the deploy job gets the `pages: write` and `id-token: write` permissions, and it only runs on `main`.
 - **Dependabot:** `.github/dependabot.yml` checks npm and GitHub Actions weekly, on Monday. `vite` and `vite-plugin-static-copy` are grouped, and so are all other minor/patch npm updates.
 
 ## Dependencies
 
 Installed with npm and bundled by Vite. `node_modules/` is not committed and not served directly.
 
-| Package           | How it is used                                                                                                                                                  |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bootstrap`       | CSS via `<link>` on every page                                                                                                                                  |
-| `bootstrap-icons` | CSS via `<link>` on every page except the De Tijd article (theme toggle icon, calendar icons on the timeline)                                                   |
-| `photoswipe`      | `photoswipe.css` via `<link>`, plus `import PhotoSwipeLightbox from 'photoswipe/lightbox'` and `import('photoswipe')`, on the gallery pages and `tijdlijn.html` |
-| `masonry-layout`  | `import Masonry from 'masonry-layout'`, only on `fotos/oude-doos`                                                                                               |
-| `@sentry/browser` | imported by `src/sentry.js`                                                                                                                                     |
+| Package           | How it is used                                                                                                                                                   |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bootstrap`       | CSS via `<link>` on every page                                                                                                                                   |
+| `bootstrap-icons` | CSS via `<link>` on every page except the De Tijd article (theme toggle icon, calendar icons on the timeline)                                                    |
+| `photoswipe`      | `photoswipe.css` via `<link>`, plus `src/gallery.js` (which imports `photoswipe/lightbox` and lazy-loads `photoswipe`), on the gallery pages and `tijdlijn.html` |
+| `masonry-layout`  | `import Masonry from 'masonry-layout'`, only on `fotos/oude-doos`                                                                                                |
+| `@sentry/browser` | imported by `src/sentry.js`                                                                                                                                      |
 
 Stylesheets are linked with relative paths into `node_modules/`, e.g. `node_modules/bootstrap/dist/css/bootstrap.min.css` from a root page and `../../node_modules/…` from a gallery page. Vite resolves and bundles these during the build. Do not change them to bare specifiers: Vite only resolves those in JS `import` statements.
 
@@ -69,7 +71,7 @@ Every page except the De Tijd article uses the same layout, so copy an existing 
   - the stylesheets (Bootstrap, bootstrap-icons, PhotoSwipe where needed, `stylesheet.css`)
   - the inline theme script (see _Theme_)
 - **`<body class="site-page">`** contains:
-  - a skip link, `<a class="skip-link visually-hidden-focusable" href="#content">Naar inhoud</a>`
+  - a skip link, `<a class="skip-link visually-hidden-focusable" href="#content">Naar inhoud</a>`; `<main id="content">` has `tabindex="-1"` so the skip link moves keyboard focus there
   - `header.site-header`: the logo, `<h1>Peperstraat <mark>16e</mark></h1>`, `<p class="site-subtitle">Gouda</p>`, the navigation and the theme toggle button
   - `div.page-content` with the `<main id="content">`
   - `footer.site-footer` with a link to the contact page
@@ -81,7 +83,7 @@ Every page except the De Tijd article uses the same layout, so copy an existing 
   - Don't skip levels. Use a class such as `h4` to change the size instead.
 - **Scripts:**
   - The other root pages load `src/sentry.js`, `src/analytics.js` and `src/theme-toggle.js` (and on bronnen `src/scroll-to-anchor.js`) as `<script type="module" src>` in `<head>`.
-  - Pages with their own module script (galleries, tijdlijn) `import` them at the top of that script instead.
+  - Pages with their own module script (galleries, tijdlijn) `import` them at the top of that script instead, followed by `initGallery(…)` from `src/gallery.js`. oude-doos also starts Masonry there.
 - **Header logo:** `<img src="logo.svg" class="logo-img" width="116" height="171">`, 100px wide on phones and 150px from 768px up (see `.logo-img` in `stylesheet.css`). Gallery pages use `../../logo.svg`. SVGs used as an `<img>` need a `viewBox`, otherwise they are cropped instead of scaled.
 - **Navigation:**
   - The current page's link has no `href`, has `class="nav-link active"` and has `aria-current="page"`.
@@ -96,7 +98,7 @@ Every page except the De Tijd article uses the same layout, so copy an existing 
 
 - **Explicit theme:** the theme is always set explicitly as `data-bs-theme="light|dark"` on `<html>`. Bootstrap's CSS has no `prefers-color-scheme` rules of its own, so leaving the attribute off would show Bootstrap light on a dark page.
 - **Inline `<head>` script:**
-  - Each page has a small inline script in `<head>`, right after the stylesheets.
+  - Each page except the De Tijd article has a small inline script in `<head>`, right after the stylesheets.
   - It reads the saved choice from `localStorage` (`peperstraat-theme`) and falls back to the system setting.
   - It sets the attribute before the first paint, so nothing flashes.
   - New pages need it too.
@@ -133,7 +135,7 @@ Use `srcset.sh`, which needs ImageMagick 7 (`magick`):
 The script:
 
 1. **Full-size WebP:** converts the original to `resized/<name>.webp`, capped at 2560px on the longest side and quality 80. This file is only the fallback `href` behind the thumbnail; PhotoSwipe loads from `data-pswp-srcset`.
-2. **Resized variants:** creates WebPs at 320, 640, 768, 1024, 1366, 1440, 1600 and 1920px wide.
+2. **Resized variants:** creates WebPs at 320, 640, 768, 1024, 1366, 1440, 1600 and 1920px wide, never wider than the original.
 3. **Filenames:** replaces spaces with `-` in the output names. Spaces would break the `srcset` lists.
 4. **Markup:** prints a `<figure class="col-12 col-md-4">` with a PhotoSwipe `<a>`.
    - The `<a>` has `data-pswp-srcset`, plus `data-pswp-width`/`data-pswp-height` taken from the original.
