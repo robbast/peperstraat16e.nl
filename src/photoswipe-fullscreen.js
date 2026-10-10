@@ -1,4 +1,4 @@
-const defaultOptions = { fullscreenTitle: 'Toggle fullscreen' }
+const defaultOptions = { fullscreenTitle: 'Volledig scherm' }
 class PhotoSwipeFullscreen {
   constructor(lightbox, options) {
     this.options = { ...defaultOptions, ...options }
@@ -13,7 +13,7 @@ class PhotoSwipeFullscreen {
       '<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 32 32" width="32" height="32">' +
       '<use class="pswp__icn-shadow" xlink:href="#pswp__icn-fullscreen-exit"/>' +
       '<use class="pswp__icn-shadow" xlink:href="#pswp__icn-fullscreen-request"/>' +
-      '<path id="pswp__icn-fullscreen-request" transform="translate(4,4)" d="M20 3h2v6h-2V5h-4V3h4zM4 3h4v2H4v4H2V3h2zm16 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z" /></g>' +
+      '<path id="pswp__icn-fullscreen-request" transform="translate(4,4)" d="M20 3h2v6h-2V5h-4V3h4zM4 3h4v2H4v4H2V3h2zm16 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z" />' +
       '<path id="pswp__icn-fullscreen-exit" style="display:none" transform="translate(4,4)" d="M18 7h4v2h-6V3h2v4zM8 9H2V7h4V3h2v6zm10 8v4h-2v-6h6v2h-4zM8 15v6H6v-4H2v-2h6z"/>' +
       '</svg>'
     if (this.fullscreenAPI) {
@@ -29,10 +29,15 @@ class PhotoSwipeFullscreen {
           },
         })
         pswp.events.add(document, 'keydown', (e) => {
-          if (e.keyCode == 70) {
+          // Plain "f" only, so Ctrl/Cmd+F still opens the browser's find
+          if (e.key === 'f' && !e.ctrlKey && !e.metaKey && !e.altKey) {
             this.toggleFullscreen()
             e.preventDefault()
           }
+        })
+        // Follow the actual state, so the icon is also right after leaving fullscreen with Esc or F11
+        pswp.events.add(document, this.fullscreenAPI.change, () => {
+          this.updateIcon()
         })
       })
     }
@@ -46,18 +51,20 @@ class PhotoSwipeFullscreen {
     if (this.fullscreenAPI) {
       if (this.fullscreenAPI.isFullscreen()) {
         this.fullscreenAPI.exit()
-        setTimeout(function () {
-          document.getElementById('pswp__icn-fullscreen-exit').style.display = 'none'
-          document.getElementById('pswp__icn-fullscreen-request').style.display = 'inline'
-        }, 300)
       } else {
         this.fullscreenAPI.request(document.querySelector('.pswp'))
-        setTimeout(function () {
-          document.getElementById('pswp__icn-fullscreen-exit').style.display = 'inline'
-          document.getElementById('pswp__icn-fullscreen-request').style.display = 'none'
-        }, 300)
       }
     }
+  }
+  updateIcon() {
+    const exitIcon = document.getElementById('pswp__icn-fullscreen-exit')
+    const requestIcon = document.getElementById('pswp__icn-fullscreen-request')
+    // The lightbox may already be gone when leaving fullscreen on close
+    if (!exitIcon || !requestIcon) return
+
+    const isFullscreen = Boolean(this.fullscreenAPI.isFullscreen())
+    exitIcon.style.display = isFullscreen ? 'inline' : 'none'
+    requestIcon.style.display = isFullscreen ? 'none' : 'inline'
   }
   getFullscreenAPI() {
     let api
@@ -66,13 +73,13 @@ class PhotoSwipeFullscreen {
     let elementFS
     let changeEvent
     let errorEvent
-    if (document.documentElement.fullscreenEnabled) {
+    if (document.fullscreenEnabled) {
       enterFS = 'requestFullscreen'
       exitFS = 'exitFullscreen'
       elementFS = 'fullscreenElement'
       changeEvent = 'fullscreenchange'
       errorEvent = 'fullscreenerror'
-    } else if (document.documentElement.webkitFullscreenEnabled) {
+    } else if (document.webkitFullscreenEnabled) {
       enterFS = 'webkitRequestFullscreen'
       exitFS = 'webkitExitFullscreen'
       elementFS = 'webkitFullscreenElement'
