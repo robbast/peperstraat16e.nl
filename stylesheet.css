@@ -124,6 +124,11 @@ a:hover {
   box-shadow: 0 2px 12px var(--shadow-header);
 }
 
+/* The skip link focuses <main>; it is not interactive, so no focus ring there */
+main:focus {
+  outline: none;
+}
+
 /* ── Header ─────────────────────────────────────────────────────────────── */
 header.site-header {
   background-color: var(--header-bg);
