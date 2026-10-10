@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../../node_modules/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="../../stylesheet.css" />
+    <script>
+      // Set the theme before first paint so Bootstrap and our tokens agree and nothing flashes; see src/theme-toggle.js
+      try {
+        var theme = localStorage.getItem('peperstraat-theme')
+      } catch {}
+      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    </script>
   </head>
 
   <body>
@@ -61,7 +69,6 @@
       <section class="gallery row">
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20211019_121747.webp"
             data-pswp-srcset="
             resized/IMG_20211019_121747-320w.webp 320w,
@@ -83,7 +90,6 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20211019_121759.webp"
             data-pswp-srcset="
             resized/IMG_20211019_121759-320w.webp 320w,
@@ -105,7 +111,6 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20220104_170730.webp"
             data-pswp-srcset="
             resized/IMG_20220104_170730-320w.webp 320w,
@@ -127,7 +132,6 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20220124_190405.webp"
             data-pswp-srcset="
             resized/IMG_20220124_190405-320w.webp 320w,
@@ -143,13 +147,12 @@
             data-pswp-height="3000"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/IMG_20220124_190405-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/IMG_20220124_190405-640w.webp" />
           </a>
           <figcaption>Omdat mijn vrouw graag bakt heb ik de bestaande koven aangepast om ruimte te maken voor twee ovens.</figcaption>
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20220203_094727.webp"
             data-pswp-srcset="
             resized/IMG_20220203_094727-320w.webp 320w,
@@ -165,13 +168,12 @@
             data-pswp-height="3000"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/IMG_20220203_094727-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/IMG_20220203_094727-640w.webp" />
           </a>
           <figcaption>Het eindresultaat na de eerste klusronde in de keuken.</figcaption>
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20221015_195243.webp"
             data-pswp-srcset="
             resized/IMG_20221015_195243-320w.webp 320w,
@@ -187,7 +189,7 @@
             data-pswp-height="3000"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/IMG_20221015_195243-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/IMG_20221015_195243-640w.webp" />
           </a>
           <figcaption>
             Al snel hadden we behoefte aan meer opbergruimte en aanrecht oppervlakte. Daarom besloot ik om zelf nog een aanrechtblok te bouwen.
@@ -195,7 +197,6 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20221029_121453.webp"
             data-pswp-srcset="
             resized/IMG_20221029_121453-320w.webp 320w,
@@ -211,13 +212,12 @@
             data-pswp-height="3000"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/IMG_20221029_121453-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/IMG_20221029_121453-640w.webp" />
           </a>
           <figcaption>Het frame rondom de radiator met uitsparingen om luchtcirculatie te bevorderen.</figcaption>
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20221101_193801.webp"
             data-pswp-srcset="
             resized/IMG_20221101_193801-320w.webp 320w,
@@ -233,13 +233,12 @@
             data-pswp-height="3000"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/IMG_20221101_193801-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/IMG_20221101_193801-640w.webp" />
           </a>
           <figcaption>Ik ben ITer van beroep, mijn (amateuristische) timmermanskunsten zie ik vooral als een leuke vrijetijdsbesteding.</figcaption>
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20221226_140547.webp"
             data-pswp-srcset="
             resized/IMG_20221226_140547-320w.webp 320w,
@@ -255,7 +254,7 @@
             data-pswp-height="3000"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/IMG_20221226_140547-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/IMG_20221226_140547-640w.webp" />
           </a>
           <figcaption>Met triplex de detailering aangebracht, rooster boven de radiator en het laatste likje verf.</figcaption>
         </figure>
@@ -276,7 +275,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20240302_091646839-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20240302_091646839-640w.webp" />
           </a>
           <figcaption>Toen er nog meer behoefte was aan opbergruimte, ben ik begonnen aan een hangkast boven het nieuwe blok.</figcaption>
         </figure>
@@ -297,7 +296,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20240520_083408413-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20240520_083408413-640w.webp" />
           </a>
           <figcaption>Voorlopig zijn we nu wel klaar met de keuken denk (hoop) ik.</figcaption>
         </figure>

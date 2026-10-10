@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../../node_modules/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="../../stylesheet.css" />
+    <script>
+      // Set the theme before first paint so Bootstrap and our tokens agree and nothing flashes; see src/theme-toggle.js
+      try {
+        var theme = localStorage.getItem('peperstraat-theme')
+      } catch {}
+      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    </script>
   </head>
 
   <body>
@@ -61,7 +69,6 @@
       <section class="gallery row">
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20210512_174539.webp"
             data-pswp-srcset="
             resized/IMG_20210512_174539-320w.webp 320w,
@@ -85,7 +92,6 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20210709_200642.webp"
             data-pswp-srcset="
             resized/IMG_20210709_200642-320w.webp 320w,
@@ -109,7 +115,6 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            loading="lazy"
             href="resized/IMG_20230514_091643.webp"
             data-pswp-srcset="
             resized/IMG_20230514_091643-320w.webp 320w,

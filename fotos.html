@@ -16,6 +16,14 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="stylesheet.css" />
+    <script>
+      // Set the theme before first paint so Bootstrap and our tokens agree and nothing flashes; see src/theme-toggle.js
+      try {
+        var theme = localStorage.getItem('peperstraat-theme')
+      } catch {}
+      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    </script>
 
     <script type="module" src="src/sentry.js"></script>
     <script type="module" src="src/analytics.js"></script>
@@ -110,7 +118,7 @@
                 <abbr title="Nederlands Instituut voor Militaire Historie">NIMH</abbr>:
                 <cite>
                   <a
-                    href="https://beeldbank.nimh.nl/foto-s-2/detail/de6cf766-3da5-d123-3839-a160d9d52f64/media/f4680cc8-4651-5430-5834-b0e5bb0eb0ff"
+                    href="https://beeldbank.nimh.nl/foto-s-2/detail/94f33a00-ca41-26dd-66ab-a155e92f8168/media/cfdfc2c9-87c5-9fc4-a15a-fcaed2196370"
                     target="_blank"
                   >
                     Gouda 1928 (objectnr. 2011-0151)

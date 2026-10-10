@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../../node_modules/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="../../stylesheet.css" />
+    <script>
+      // Set the theme before first paint so Bootstrap and our tokens agree and nothing flashes; see src/theme-toggle.js
+      try {
+        var theme = localStorage.getItem('peperstraat-theme')
+      } catch {}
+      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    </script>
   </head>
 
   <body>
@@ -147,7 +155,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20240620_122618379-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20240620_122618379-640w.webp" />
           </a>
           <figcaption>
             Meerdere containers gevuld met de oude tegels die ik heel heb kunnen verwijderen. Deze zullen ooit goed van pas komen bij het vervangen van kapotte
@@ -171,7 +179,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20240702_104524272-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20240702_104524272-640w.webp" />
           </a>
           <figcaption>
             Daarna het werk overgedragen aan
@@ -195,7 +203,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20240901_063707667-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20240901_063707667-640w.webp" />
           </a>
           <figcaption>
             Toen de basis eenmaal af was, hebben we een voorproefje genomen van de nieuwe situatie. Het was ons al snel duidelijk dat we hier vele zomeravonden
@@ -219,7 +227,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20250219_125803382-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20250219_125803382-640w.webp" />
           </a>
           <figcaption>Maar kinderen en een dakterras zonder hek gaan niet goed samen uiteraard.</figcaption>
         </figure>
@@ -240,7 +248,7 @@
             data-pswp-height="3472"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20250404_143938880-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20250404_143938880-640w.webp" />
           </a>
           <figcaption>Ook nog een mooi trapje op maat laten maken door Roest en Moree B.V. uit Bergambacht.</figcaption>
         </figure>
@@ -261,7 +269,7 @@
             data-pswp-height="6144"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/PXL_20260704_095430376-640w.webp" />
+            <img class="figure-img img-thumbnail" loading="lazy" src="resized/PXL_20260704_095430376-640w.webp" />
           </a>
           <figcaption>En nu lekker genieten!</figcaption>
         </figure>

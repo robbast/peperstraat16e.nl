@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../../node_modules/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="../../stylesheet.css" />
+    <script>
+      // Set the theme before first paint so Bootstrap and our tokens agree and nothing flashes; see src/theme-toggle.js
+      try {
+        var theme = localStorage.getItem('peperstraat-theme')
+      } catch {}
+      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    </script>
   </head>
 
   <body>
@@ -132,22 +140,22 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            href="resized/1953-06-22 kleuterschool.webp"
+            href="resized/1953-06-22-kleuterschool.webp"
             data-pswp-srcset="
-              resized/1953-06-22 kleuterschool-320w.webp 320w,
-              resized/1953-06-22 kleuterschool-640w.webp 640w,
-              resized/1953-06-22 kleuterschool-768w.webp 768w,
-              resized/1953-06-22 kleuterschool-1024w.webp 1024w,
-              resized/1953-06-22 kleuterschool-1366w.webp 1366w,
-              resized/1953-06-22 kleuterschool-1440w.webp 1440w,
-              resized/1953-06-22 kleuterschool-1600w.webp 1600w,
-              resized/1953-06-22 kleuterschool-1920w.webp 1920w,
+              resized/1953-06-22-kleuterschool-320w.webp 320w,
+              resized/1953-06-22-kleuterschool-640w.webp 640w,
+              resized/1953-06-22-kleuterschool-768w.webp 768w,
+              resized/1953-06-22-kleuterschool-1024w.webp 1024w,
+              resized/1953-06-22-kleuterschool-1366w.webp 1366w,
+              resized/1953-06-22-kleuterschool-1440w.webp 1440w,
+              resized/1953-06-22-kleuterschool-1600w.webp 1600w,
+              resized/1953-06-22-kleuterschool-1920w.webp 1920w,
             "
             data-pswp-width="1982"
             data-pswp-height="1281"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/1953-06-22 kleuterschool-640w.webp" />
+            <img class="figure-img img-thumbnail" src="resized/1953-06-22-kleuterschool-640w.webp" />
           </a>
           <figcaption>
             Vermoedelijk een foto van een klas of meerdere klassen, omstreeks 1953. Genomen voor de zandbak op het speelplein. Op de plek van de zandbak staat
@@ -177,22 +185,22 @@
         </figure>
         <figure class="col-12 col-md-4">
           <a
-            href="resized/1955 drieling Spruijt bij juffrouw Toos Zaal.webp"
+            href="resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal.webp"
             data-pswp-srcset="
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-320w.webp 320w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-640w.webp 640w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-768w.webp 768w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-1024w.webp 1024w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-1366w.webp 1366w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-1440w.webp 1440w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-1600w.webp 1600w,
-              resized/1955 drieling Spruijt bij juffrouw Toos Zaal-1920w.webp 1920w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-320w.webp 320w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-640w.webp 640w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-768w.webp 768w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-1024w.webp 1024w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-1366w.webp 1366w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-1440w.webp 1440w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-1600w.webp 1600w,
+              resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-1920w.webp 1920w,
             "
             data-pswp-width="2592"
             data-pswp-height="1848"
             target="_blank"
           >
-            <img class="figure-img img-thumbnail" src="resized/1955 drieling Spruijt bij juffrouw Toos Zaal-640w.webp" />
+            <img class="figure-img img-thumbnail" src="resized/1955-drieling-Spruijt-bij-juffrouw-Toos-Zaal-640w.webp" />
           </a>
           <figcaption>
             Klas van juffrouw Toos, omstreeks 1955, met vooraan de drieling Spruit. Op de plek van dit klaslokaal bevindt zich tegenwoordig de woonkamer van

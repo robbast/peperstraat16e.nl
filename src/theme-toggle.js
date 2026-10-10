@@ -17,14 +17,10 @@ function saveTheme(theme) {
   localStorage.setItem(STORAGE_KEY, theme)
 }
 
+// Always set an explicit theme: Bootstrap's CSS has no prefers-color-scheme rules of its own.
+// The inline script in each page's <head> does the same before first paint.
 function applyTheme(theme) {
-  const html = document.documentElement
-
-  if (theme === SYSTEM) {
-    html.removeAttribute('data-bs-theme')
-  } else {
-    html.setAttribute('data-bs-theme', theme)
-  }
+  document.documentElement.setAttribute('data-bs-theme', theme === SYSTEM ? getSystemPreference() : theme)
 }
 
 function getCurrentTheme() {
@@ -100,16 +96,14 @@ function updateToggleButton() {
 
 // Initialize on page load
 function init() {
-  const stored = getStoredTheme()
-  if (stored) {
-    applyTheme(stored)
-  }
+  applyTheme(getCurrentTheme())
 
   // Listen for system preference changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     if (!getStoredTheme()) {
-      updateToggleButton()
+      applyTheme(SYSTEM)
     }
+    updateToggleButton()
   })
 
   // Setup toggle button
