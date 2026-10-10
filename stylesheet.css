@@ -2,7 +2,7 @@
 :root {
   /* Brand colors */
   --dark-red: rgb(117 66 57 / 100%);
-  --bright-red: rgb(161 101 89 / 100%);
+  --bright-red: rgb(138 87 76 / 100%);
 
   /* Header & footer palette */
   --header-bg: #eadfd8;
@@ -33,7 +33,14 @@
 
 /* ── Dark mode palette (data-bs-theme is always set, see src/theme-toggle.js) */
 html[data-bs-theme='dark'] {
-  /* Brand colors */
+  /* Brand colors: lighter so links stay readable on the dark background */
+  --dark-red: rgb(224 182 174 / 100%);
+  --bright-red: rgb(207 142 129 / 100%);
+
+  /* Bootstrap's secondary gray (.text-secondary) is the same in both themes and too dark here */
+  --bs-secondary-rgb: 173, 181, 189;
+
+  /* Header & footer palette */
   --header-bg: #2a2320;
   --header-fg: #e8ddd6;
   --body-bg: #1a1815;
@@ -319,6 +326,12 @@ blockquote.blockquote {
 }
 
 /* ── Dark mode adjustments ─────────────────────────────────────────────── */
+
+/* Bootstrap hard-codes this gray regardless of theme */
+html[data-bs-theme='dark'] .blockquote-footer {
+  color: var(--bs-secondary-color);
+}
+
 html[data-bs-theme='dark'] .breadcrumb-item.active,
 html[data-bs-theme='dark'] small.text-muted {
   color: var(--text-muted) !important;
