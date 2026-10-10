@@ -10,7 +10,7 @@ Static website (in Dutch) about a historic building at Peperstraat 16e, Gouda: b
 - **Photo galleries**: `fotos/<category>/index.html` (`dakterras`, `keuken`, `oude-doos`, `renovatie-exterieur`, `tuin`). Each folder holds the original photos and generated WebP variants in `fotos/<category>/resized/`.
 - **Building drawings**: `images/bouwtekeningen/*.png`, linked from `tijdlijn.html` via `<a href>`.
 - **Shared styles**: `stylesheet.css`, on top of Bootstrap 5.3.
-- **Logo and favicon**: `favicon.svg` (browser tab), `favicon-large.svg` and `favicon-small.svg` (header logo).
+- **Logo and favicon**: `logo.svg` (header logo, the complete shield) and `favicon.svg` (browser tab, a cropped version of the shield).
 - **Scripts** in `src/`:
   - `sentry.js`: error tracking (see below)
   - `analytics.js`: Google Analytics (`G-Q5YN1ZCS28`), loads gtag.js at runtime
@@ -22,13 +22,14 @@ Static website (in Dutch) about a historic building at Peperstraat 16e, Gouda: b
 ## Commands
 
 ```bash
+npm run dev      # dev server with live reload, serves the source files
 npm run build    # Vite build → dist/
 npm run preview  # serve dist/ locally
 npm run lint     # html-validate, stylelint, eslint and prettier --check
 npm run fix      # autofix lint issues and format
 ```
 
-Run `npm run lint` before committing. CI does not run it.
+Run `npm run lint` before committing. CI runs it too, before the build.
 
 ## Build and deploy
 
@@ -38,7 +39,9 @@ Run `npm run lint` before committing. CI does not run it.
   - A pair of `transformIndexHtml` plugins stops that, so thumbnails keep the same paths the PhotoSwipe `data-pswp-srcset` attributes use.
   - That avoids a second, hashed copy of every thumbnail.
 - **Static copy:** `vite-plugin-static-copy` copies `fotos/*/resized/*` (keeping its folder structure), `images/` and `CNAME` into `dist/`. The original photos are not deployed.
-- **Deploy:** `.github/workflows/deploy.yml` runs on every push to `main`: `npm ci && npm run build` on Node 24, then deploys `dist/` with `actions/deploy-pages`. GitHub Pages is set to _Source: GitHub Actions_.
+- **Deploy:** `.github/workflows/deploy.yml` runs `npm ci`, `npm run lint` and `npm run build` on Node 24.
+  - On a push to `main` it then deploys `dist/` with `actions/deploy-pages`. GitHub Pages is set to _Source: GitHub Actions_.
+  - On a pull request it only lints and builds, in its own concurrency group, so it never deploys.
 - **Dependabot:** `.github/dependabot.yml` checks npm and GitHub Actions weekly, on Monday. `vite` and `vite-plugin-static-copy` are grouped, and so are all other minor/patch npm updates.
 
 ## Dependencies
@@ -66,13 +69,20 @@ Every page except the De Tijd article uses the same layout, so copy an existing 
   - the stylesheets (Bootstrap, bootstrap-icons, PhotoSwipe where needed, `stylesheet.css`)
   - the inline theme script (see _Theme_)
 - **`<body class="site-page">`** contains:
-  - `header.site-header`: the logo, `<h1>Peperstraat <mark>16e</mark></h1>`, the subtitle "Gouda", the navigation and the theme toggle button
-  - `div.page-content`, wrapping `<main class="container">` and any further content sections
+  - a skip link, `<a class="skip-link visually-hidden-focusable" href="#content">Naar inhoud</a>`
+  - `header.site-header`: the logo, `<h1>Peperstraat <mark>16e</mark></h1>`, `<p class="site-subtitle">Gouda</p>`, the navigation and the theme toggle button
+  - `div.page-content` with the `<main id="content">`
   - `footer.site-footer` with a link to the contact page
+- **`<main>`:**
+  - Usually `<main class="container" id="content">`.
+  - Pages with separate content sections (tijdlijn, bronnen, fotos) use `<main id="content">` containing a `div.container` for the intro and a `section.container` for the content. All page content belongs inside `<main>`.
+- **Headings:**
+  - The page title is the `<h2>`; a gallery page has a visually hidden `<h2>` with the gallery name, because the breadcrumb is its visible title.
+  - Don't skip levels. Use a class such as `h4` to change the size instead.
 - **Scripts:**
   - The other root pages load `src/sentry.js`, `src/analytics.js` and `src/theme-toggle.js` (and on bronnen `src/scroll-to-anchor.js`) as `<script type="module" src>` in `<head>`.
   - Pages with their own module script (galleries, tijdlijn) `import` them at the top of that script instead.
-- **Header logo:** a `<picture>` with `favicon-small.svg` below 768px and `favicon-large.svg` above. Gallery pages use `../../` paths.
+- **Header logo:** `<img src="logo.svg" class="logo-img" width="116" height="171">`, 100px wide on phones and 150px from 768px up (see `.logo-img` in `stylesheet.css`). Gallery pages use `../../logo.svg`. SVGs used as an `<img>` need a `viewBox`, otherwise they are cropped instead of scaled.
 - **Navigation:**
   - The current page's link has no `href`, has `class="nav-link active"` and has `aria-current="page"`.
   - Root pages link with bare filenames (`fotos.html`); gallery pages use `../../fotos.html`.
@@ -93,6 +103,7 @@ Every page except the De Tijd article uses the same layout, so copy an existing 
 - **`src/theme-toggle.js`:**
   - It handles the toggle button, which cycles between system, dark and light. The button shows the icon for the theme you get when you click it.
   - It follows system changes while "system" is selected.
+  - When `localStorage` is blocked, it falls back to the system theme instead of breaking. Its labels are in Dutch.
 - **Design tokens:**
   - `stylesheet.css` defines them on `:root` (light) and overrides them in `html[data-bs-theme='dark']`.
   - There is no `prefers-color-scheme` media query in the CSS. Without JavaScript the site is entirely light.
@@ -105,11 +116,11 @@ Every page except the De Tijd article uses the same layout, so copy an existing 
 - **Dark-mode fixes for Bootstrap:**
   - Bootstrap's `.text-secondary` grey and `.blockquote-footer` colour are the same in both themes and too dark on a dark background.
   - The dark theme overrides `--bs-secondary-rgb` and the `.blockquote-footer` colour.
-- **Logo:** the logo SVGs are black. In dark mode `.logo-img` gets `filter: invert(90%)`.
+- **Logo:** the logo SVG is black. In dark mode `.logo-img` gets `filter: invert(90%)`.
 
 ## Error tracking (Sentry)
 
-`src/sentry.js` initialises `@sentry/browser` with a hardcoded DSN. Browser DSNs are public by design, because they end up in the client bundle anyway.
+`src/sentry.js` initialises `@sentry/browser` with a hardcoded DSN. Browser DSNs are public by design, because they end up in the client bundle anyway. Sentry is only enabled in a production build served from `peperstraat16e.nl`, so `npm run dev` and `npm run preview` don't report errors.
 
 ## Adding photos
 
@@ -126,7 +137,7 @@ The script:
 3. **Filenames:** replaces spaces with `-` in the output names. Spaces would break the `srcset` lists.
 4. **Markup:** prints a `<figure class="col-12 col-md-4">` with a PhotoSwipe `<a>`.
    - The `<a>` has `data-pswp-srcset`, plus `data-pswp-width`/`data-pswp-height` taken from the original.
-   - Inside it is `<img class="figure-img img-thumbnail" alt="" loading="lazy">` using the 640w WebP.
+   - Inside it is `<img class="figure-img img-thumbnail" alt="" loading="lazy" width height>` using the 640w WebP, with that file's dimensions so the layout doesn't shift while images load.
    - There is a placeholder `<figcaption>`.
 
 After appending, move the figure into the gallery `<section>`, write the caption and run `npm run fix`. The thumbnail has `alt=""` because the figcaption already describes the photo.
@@ -146,12 +157,13 @@ The original photos are committed so the WebPs can be regenerated, but they are 
   - A lazy image that hasn't loaded yet has no height at that point, so figures overlap.
   - Because every unmeasured image then sits in the viewport, they all load straight away anyway.
   - So lazy loading there breaks the layout without saving anything.
-- **Enabling it later:** give the thumbnails `width`/`height` attributes so Masonry knows their size up front, or call `msnry.layout()` whenever an image finishes loading.
+- **Enabling it later:** the thumbnails now have `width`/`height` attributes, so the browser knows their size before they load and Masonry could measure them correctly. Test the layout in a browser before adding `loading="lazy"` there.
 
 ## Conventions
 
 - **Language:** all content is in Dutch (nl-NL).
 - **Gallery image markup:**
   - Each photo is a `<figure class="col-12 col-md-4">` containing a PhotoSwipe `<a>` with `href`, `data-pswp-srcset`, `data-pswp-width` and `data-pswp-height`.
-  - Inside it is an `<img>` using the 640w WebP as `src`.
+  - Inside it is an `<img>` using the 640w WebP as `src`, with `alt=""` and its `width`/`height`.
+  - Every PhotoSwipe lightbox uses `children: 'a[data-pswp-width]'`, so other links (such as links in captions) never open in the lightbox.
 - **Formatting:** Prettier, with the settings in `.prettierrc.json`. Elements that must stay on one line per item, such as the source lists on the timeline, use `<!-- prettier-ignore -->`.

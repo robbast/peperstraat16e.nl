@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js && npm run format:check",

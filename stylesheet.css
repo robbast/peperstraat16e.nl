@@ -111,6 +111,19 @@ a:hover {
   color: var(--dark-red);
 }
 
+/* ── Skip link ──────────────────────────────────────────────────────────── */
+.skip-link:focus {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background-color: var(--body-bg);
+  color: var(--text-primary);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px var(--shadow-header);
+}
+
 /* ── Header ─────────────────────────────────────────────────────────────── */
 header.site-header {
   background-color: var(--header-bg);
@@ -125,19 +138,22 @@ header.site-header .container {
   position: relative;
 }
 
-/* Logo: responsive sizing */
+/* Logo: responsive sizing, with room around it so it never touches the header edges or the navigation */
 .logo-img {
+  display: block;
   width: 100px;
   height: auto;
+  margin: 0.5rem;
 }
 
 @media (width >= 768px) {
   .logo-img {
-    width: 300px;
+    width: 150px;
+    margin: 1rem 0;
   }
 }
 
-/* The logo SVGs are black; turn them light on the dark header */
+/* The logo SVG is black; turn it light on the dark header */
 html[data-bs-theme='dark'] .logo-img {
   filter: invert(90%);
 }
@@ -149,7 +165,9 @@ header.site-header h1 {
   line-height: 1.1;
 }
 
-header.site-header h2 {
+header.site-header .site-subtitle {
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.2;
   font-size: clamp(0.85rem, 2vw, 1.1rem);
   margin: 0;
   color: var(--text-muted);
@@ -225,13 +243,6 @@ div.card {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 18px rgb(0 0 0 / 18%);
-}
-
-/* ── Main content ───────────────────────────────────────────────────────── */
-main {
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */

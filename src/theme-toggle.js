@@ -9,12 +9,21 @@ function getSystemPreference() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT
 }
 
+// localStorage throws when storage is blocked; fall back to the system theme and don't remember the choice
 function getStoredTheme() {
-  return localStorage.getItem(STORAGE_KEY)
+  try {
+    return localStorage.getItem(STORAGE_KEY)
+  } catch {
+    return null
+  }
 }
 
 function saveTheme(theme) {
-  localStorage.setItem(STORAGE_KEY, theme)
+  try {
+    localStorage.setItem(STORAGE_KEY, theme)
+  } catch {
+    // ignore
+  }
 }
 
 // Always set an explicit theme: Bootstrap's CSS has no prefers-color-scheme rules of its own.
@@ -74,11 +83,11 @@ function getAriaLabelForNextTheme() {
   const next = getNextTheme()
 
   if (next === DARK) {
-    return 'Switch to dark mode'
+    return 'Schakel naar donkere modus'
   } else if (next === LIGHT) {
-    return 'Switch to light mode'
+    return 'Schakel naar lichte modus'
   } else {
-    return 'Switch to system theme'
+    return 'Volg systeeminstelling'
   }
 }
 

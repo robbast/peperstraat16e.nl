@@ -2,9 +2,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Rob Bast" />
     <meta name="description" content="Geschiedenis van Peperstraat 16e" />
     <meta name="theme-color" content="#730000" />
@@ -27,17 +26,16 @@
   </head>
 
   <body class="site-page">
+    <a class="skip-link visually-hidden-focusable" href="#content">Naar inhoud</a>
+
     <header class="site-header container-fluid mb-3 mb-md-4">
       <div class="container d-flex flex-wrap align-items-center">
         <div class="flex-shrink-0">
-          <picture class="logo">
-            <source media="(max-width: 767px)" srcset="favicon-small.svg" />
-            <img src="favicon-large.svg" alt="Peperstraat 16e" class="logo-img" />
-          </picture>
+          <img src="logo.svg" alt="Peperstraat 16e" class="logo-img" width="116" height="171" />
         </div>
         <div class="flex-grow-1 ms-1 ms-md-5">
           <h1>Peperstraat <mark>16e</mark></h1>
-          <h2>Gouda</h2>
+          <p class="site-subtitle">Gouda</p>
         </div>
         <nav class="flex-grow-1 m-2 navbar nav-underline justify-content-center fs-5" aria-label="Hoofdnavigatie">
           <a class="nav-link" href="index.html">16e</a>
@@ -46,48 +44,49 @@
           <a class="nav-link" href="bronnen.html">Bronnen</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </nav>
-        <button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="theme-toggle" aria-label="Wissel thema"><i class="bi bi-moon-stars-fill"></i></button>
       </div>
     </header>
 
     <div class="page-content">
-      <main class="container">
-        <h2>Tijdlijn</h2>
-        <p class="lead">Een (beknopte) tijdlijn van de geschiedenis van het pand.</p>
-        <p>
-          Zowel online als offline hebben wij meerdere bronnen geraadpleegd in een poging om de geschiedenis van het pand te achterhalen. Denk hierbij aan
-          zoekmachines zoals Google en Delpher maar ook bijvoorbeeld het <a href="https://samh.nl">Streekarchief Midden-Holland</a>. Hieronder volgt een
-          samenvatting van de informatie die wij in de betreffende bronnen hebben aangetroffen met waar mogelijk bronverwijzingen.
-        </p>
-      </main>
+      <main id="content">
+        <div class="container">
+          <h2>Tijdlijn</h2>
+          <p class="lead">Een (beknopte) tijdlijn van de geschiedenis van het pand.</p>
+          <p>
+            Zowel online als offline hebben wij meerdere bronnen geraadpleegd in een poging om de geschiedenis van het pand te achterhalen. Denk hierbij aan
+            zoekmachines zoals Google en Delpher maar ook bijvoorbeeld het <a href="https://samh.nl">Streekarchief Midden-Holland</a>. Hieronder volgt een
+            samenvatting van de informatie die wij in de betreffende bronnen hebben aangetroffen met waar mogelijk bronverwijzingen.
+          </p>
+        </div>
 
-      <section class="container pb-4">
-        <!-- timeline based on https://codepen.io/Maxalos/pen/MXXqGj -->
+        <section class="container pb-4">
+          <!-- timeline based on https://codepen.io/Maxalos/pen/MXXqGj -->
 
-        <div class="d-flex flex-column" id="timeline">
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
+          <div class="d-flex flex-column" id="timeline">
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
               </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="1893">1893</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Aankondiging aanbesteding</h4>
-                  <p class="card-text text-secondary">
-                    De aanbesteding van de bouw wordt aangekondigd en gegund. De bouw verliep niet geheel zonder ongelukken.
-                  </p>
-                  <!-- prettier-ignore -->
-                  <small>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="1893">1893</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Aankondiging aanbesteding</h4>
+                    <p class="card-text text-secondary">
+                      De aanbesteding van de bouw wordt aangekondigd en gegund. De bouw verliep niet geheel zonder ongelukken.
+                    </p>
+                    <!-- prettier-ignore -->
+                    <small>
                     Bronnen:
                     [<a href="bronnen.html#cite-detijd-18930309">De Tijd 1893-03-09</a>]
                     [<a href="bronnen.html#cite-maasbode-18930309">Maasbode 1893-03-09</a>]
@@ -96,29 +95,31 @@
                     [<a href="bronnen.html#cite-rotterdamsch-18930914">Rotterdamsch nieuwsblad 1893-09-14</a>]
                     [<a href="bronnen.html#cite-maasbode-18930915">Maasbode 1893-09-15</a>]
                   </small>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="1894">1894</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">R.K. Weeshuis St. Joseph</h4>
-                  <p class="card-text text-secondary">
-                    Op vrijdag 12 januari 1894 wordt het pand geopend, waarin het R.K. Weeshuis St. Joseph zal worden gevestigd. Het staat op het adres Gouwe
-                    C242, tegenwoordig Hoge Gouwe 31. Het is ontworpen door Goudse architect
-                    <a href="https://nl.wikipedia.org/wiki/Christianus_Petrus_Wilhelmus_Dessing" target="_blank">C.P.W. Dessing</a>. Voor het weeshuis is op
-                    deze locatie een eeuwenoud pand afgebroken, dat bekend stond als het Vlaamsch Linnenhuis. Na de opening van het pand duurt het nog ruim een
-                    jaar voor het gebouw in gebruik wordt genomen als weeshuis.
-                  </p>
-                  <p class="card-text text-secondary">Lees <a href="detijd.18940116.html">hier het artikel</a> uit godsdienstig-staatkundig dagblad De Tijd.</p>
-                  <!-- prettier-ignore -->
-                  <small>
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="1894">1894</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">R.K. Weeshuis St. Joseph</h4>
+                    <p class="card-text text-secondary">
+                      Op vrijdag 12 januari 1894 wordt het pand geopend, waarin het R.K. Weeshuis St. Joseph zal worden gevestigd. Het staat op het adres Gouwe
+                      C242, tegenwoordig Hoge Gouwe 31. Het is ontworpen door Goudse architect
+                      <a href="https://nl.wikipedia.org/wiki/Christianus_Petrus_Wilhelmus_Dessing" target="_blank">C.P.W. Dessing</a>. Voor het weeshuis is op
+                      deze locatie een eeuwenoud pand afgebroken, dat bekend stond als het Vlaamsch Linnenhuis. Na de opening van het pand duurt het nog ruim
+                      een jaar voor het gebouw in gebruik wordt genomen als weeshuis.
+                    </p>
+                    <p class="card-text text-secondary">
+                      Lees <a href="detijd.18940116.html">hier het artikel</a> uit godsdienstig-staatkundig dagblad De Tijd.
+                    </p>
+                    <!-- prettier-ignore -->
+                    <small>
                     Bronnen:
                     [<a href="bronnen.html#cite-dagbladzh-18940115">Dagblad ZH en 's Gravenhage 1894-01-15</a>]
                     [<a href="bronnen.html#cite-detijd-18940116">De Tijd 1894-01-16</a>]
@@ -127,388 +128,392 @@
                     [<a href="bronnen.html#cite-rotterdamsch-18940117">Rotterdamsch nieuwsblad 1894-01-17</a>]
                     [<a href="bronnen.html#cite-tidinge-34-2">Tidinge 34/2 (2016)</a>]
                   </small>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
               </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
 
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
               </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="1931">ca. 1931</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">rooms-katholieke bewaarschool</h4>
-                  <p class="card-text text-secondary">
-                    Nadat het weeshuis op gaat in het nieuw gebouwde Sint-Josefpaviljoen, komt er een rooms-katholieke bewaarschool voor in de plaats. Het
-                    bestuur van de R.K. Inrichting van Liefdadigheid laat het pand ingrijpend verbouwen door
-                    <a href="https://nl.wikipedia.org/wiki/Jacobus_Petrus_Dessing" target="_blank">J.P. Dessing</a>
-                    (zoon van C.P.W. Dessing).
-                  </p>
-                  <!-- prettier-ignore -->
-                  <small>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="1931">ca. 1931</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">rooms-katholieke bewaarschool</h4>
+                    <p class="card-text text-secondary">
+                      Nadat het weeshuis op gaat in het nieuw gebouwde Sint-Josefpaviljoen, komt er een rooms-katholieke bewaarschool voor in de plaats. Het
+                      bestuur van de R.K. Inrichting van Liefdadigheid laat het pand ingrijpend verbouwen door
+                      <a href="https://nl.wikipedia.org/wiki/Jacobus_Petrus_Dessing" target="_blank">J.P. Dessing</a>
+                      (zoon van C.P.W. Dessing).
+                    </p>
+                    <!-- prettier-ignore -->
+                    <small>
                     Bronnen:
                     [<a href="bronnen.html#cite-telegraaf-19300612">De Telegraaf 1930-06-12</a>]
                     [<a href="bronnen.html#cite-telegraaf-19310405">De Telegraaf 1931-04-05</a>]
                     [<a href="bronnen.html#cite-detijd-19310414">De Tijd 1931-04-14</a>]
                     [<a href="bronnen.html#cite-diegoude-33-2">Tidinge 33/2 (2015)</a>]
                   </small>
+                  </div>
+                </div>
+                <div class="mt-2 card">
+                  <div class="card-body">
+                    <h5>(ver)bouwtekeningen</h5>
+                    <ul id="gallery">
+                      <li>
+                        <a data-pswp-width="1238" data-pswp-height="898" href="images/bouwtekeningen/blad-1.png" target="_blank">Blad 1 (begane grond)</a>
+                      </li>
+                      <li>
+                        <a data-pswp-width="1243" data-pswp-height="884" href="images/bouwtekeningen/blad-2.png" target="_blank">Blad 2 (gevels e.d.)</a>
+                      </li>
+                      <li>
+                        <a data-pswp-width="761" data-pswp-height="857" href="images/bouwtekeningen/blad-3.png" target="_blank">Blad 3 (balklagen)</a>
+                      </li>
+                      <li>
+                        <a data-pswp-width="832" data-pswp-height="1128" href="images/bouwtekeningen/trappenhuis.png" target="_blank">Trappenhuis</a>
+                      </li>
+                    </ul>
+                    <small>Bron: [<a href="bronnen.html#cite-samh-0468-4683">SAMH 0468.4683</a>]</small>
+                  </div>
                 </div>
               </div>
-              <div class="mt-2 card">
-                <div class="card-body">
-                  <h5>(ver)bouwtekeningen</h5>
-                  <ul id="gallery">
-                    <li>
-                      <a data-pswp-width="1238" data-pswp-height="898" href="images/bouwtekeningen/blad-1.png" target="_blank">Blad 1 (begane grond)</a>
-                    </li>
-                    <li>
-                      <a data-pswp-width="1243" data-pswp-height="884" href="images/bouwtekeningen/blad-2.png" target="_blank">Blad 2 (gevels e.d.)</a>
-                    </li>
-                    <li>
-                      <a data-pswp-width="761" data-pswp-height="857" href="images/bouwtekeningen/blad-3.png" target="_blank">Blad 3 (balklagen)</a>
-                    </li>
-                    <li>
-                      <a data-pswp-width="832" data-pswp-height="1128" href="images/bouwtekeningen/trappenhuis.png" target="_blank">Trappenhuis</a>
-                    </li>
-                  </ul>
-                  <small>Bron: [<a href="bronnen.html#cite-samh-0468-4683">SAMH 0468.4683</a>]</small>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="1952">1952</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Mariakleuterschool</h4>
-                  <p class="card-text text-secondary">De naam Mariakleuterschool wordt vanaf 1952 gebruikt.</p>
-                  <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="1952">1952</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Mariakleuterschool</h4>
+                    <p class="card-text text-secondary">De naam Mariakleuterschool wordt vanaf 1952 gebruikt.</p>
+                    <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
-
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="1973">ca. 1973</time> &ndash;
-                <time datetime="1977">1977</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Jaren '70</h4>
-                  <p class="card-text text-secondary">
-                    In de jaren zeventig maken meerdere instellingen gebruik van het pand. Naast een naaischool heeft De Rank erin gezeten, een christelijke
-                    school voor speciaal onderwijs. Ook de Driestar huurt het gebouw enkele jaren.
-                  </p>
-                  <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
                 </div>
               </div>
-            </div>
-          </section>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="1977">1977</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Intergemeentelijk Samenwerkingsorgaan Midden-Holland (ISMH)</h4>
-                  <p class="card-text text-secondary">
-                    Het ISMH koopt Hoge Gouwe 31 en later ook het buurpand op nummer 33. Omstreeks 1995 verhuizen de kantoren, samen met de GGD Midden-Holland,
-                    naar het nieuwe Midden-Holland huis aan de Thorbeckelaan. De panden worden vervolgens samen verkocht aan assurantieadviseur Kik van Vliet.
-                  </p>
-                  <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
-
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="1995">1995</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Verbouwing wooneenheden</h4>
-                  <p class="card-text text-secondary">
-                    Nadat Hoge Gouwe 31 en 33 in 1995 verkocht zijn aan Kik van Vliet, laat hij deze verbouwen en splitst het juridisch in zes wooneenheden.
-                    Vier hiervan krijgen de Peperstraat als postadres: 16B, 16C, 16D en 16E.
-                  </p>
-                  <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="1973">ca. 1973</time> &ndash;
+                  <time datetime="1977">1977</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Jaren '70</h4>
+                    <p class="card-text text-secondary">
+                      In de jaren zeventig maken meerdere instellingen gebruik van het pand. Naast een naaischool heeft De Rank erin gezeten, een christelijke
+                      school voor speciaal onderwijs. Ook de Driestar huurt het gebouw enkele jaren.
+                    </p>
+                    <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="1997">1997</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Gemeentelijk Monument</h4>
-                  <p class="card-text text-secondary">In 1997 worden zowel Hoge Gouwe 31 als Peperstraat 16e aangewezen als gemeentelijk monument.</p>
-                  <small>Bron: [<a href="bronnen.html#cite-monumentenlijst">GIS Gouda</a>]</small>
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="1977">1977</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Intergemeentelijk Samenwerkingsorgaan Midden-Holland (ISMH)</h4>
+                    <p class="card-text text-secondary">
+                      Het ISMH koopt Hoge Gouwe 31 en later ook het buurpand op nummer 33. Omstreeks 1995 verhuizen de kantoren, samen met de GGD
+                      Midden-Holland, naar het nieuwe Midden-Holland huis aan de Thorbeckelaan. De panden worden vervolgens samen verkocht aan
+                      assurantieadviseur Kik van Vliet.
+                    </p>
+                    <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
-
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="2020-11-23">2020</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Aankoop</h4>
-                  <p class="card-text text-secondary">November 2020 namen wij de sleutels in ontvangst en begon ons klusavontuur.</p>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
                 </div>
               </div>
-            </div>
-          </section>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="2021-12-08">2021</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Renovatie Den Hoed</h4>
-                  <p class="card-text text-secondary">
-                    December 2021 is Den Hoed bij ons begonnen aan de eerste renovatieslag. Het voornaamste doel was het dak en de gevel weer wind- en
-                    waterdicht te krijgen.
-                  </p>
-                  <!-- prettier-ignore -->
-                  <small>
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
+              </div>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="1995">1995</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Verbouwing wooneenheden</h4>
+                    <p class="card-text text-secondary">
+                      Nadat Hoge Gouwe 31 en 33 in 1995 verkocht zijn aan Kik van Vliet, laat hij deze verbouwen en splitst het juridisch in zes wooneenheden.
+                      Vier hiervan krijgen de Peperstraat als postadres: 16B, 16C, 16D en 16E.
+                    </p>
+                    <small>Bron: [<a href="bronnen.html#cite-diegoude-oudgouda">Die Goude: Oud Gouda (2016)</a>]</small>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="1997">1997</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Gemeentelijk Monument</h4>
+                    <p class="card-text text-secondary">In 1997 worden zowel Hoge Gouwe 31 als Peperstraat 16e aangewezen als gemeentelijk monument.</p>
+                    <small>Bron: [<a href="bronnen.html#cite-monumentenlijst">GIS Gouda</a>]</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
+              </div>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
+
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
+              </div>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="2020-11-23">2020</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Aankoop</h4>
+                    <p class="card-text text-secondary">November 2020 namen wij de sleutels in ontvangst en begon ons klusavontuur.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="2021-12-08">2021</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Renovatie Den Hoed</h4>
+                    <p class="card-text text-secondary">
+                      December 2021 is Den Hoed bij ons begonnen aan de eerste renovatieslag. Het voornaamste doel was het dak en de gevel weer wind- en
+                      waterdicht te krijgen.
+                    </p>
+                    <!-- prettier-ignore -->
+                    <small>
                     Bronnen:
                     [<a href="bronnen.html#cite-denhoed-fb-20211208">Den Hoed FB 2021-12-08</a>]
                     [<a href="bronnen.html#cite-denhoed-fb-20220204">Den Hoed FB 2022-02-04</a>]
                     [<a href="bronnen.html#cite-denhoed-fb-20220216">Den Hoed FB 2022-02-16</a>]
                   </small>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
               </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
 
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="2023-09-09">2023</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Open Monumentendag 2023</h4>
-                  <p class="card-text text-secondary">
-                    Op 9 september 2023 hebben wij voor het eerst het monument opengesteld tijdens Open Monumentendag. Wij bezoeken zelf graag ieder jaar de
-                    nieuwe deelnemende monumenten van OMD. Toch wisten we niet echt wat wij konden verwachten als participant. Met de teller op 690 bezoekers
-                    aan het einde van de dag, waren we op zijn zachtst gezegd redelijk overvallen. Het was bijzonder leuk om in gesprek te gaan met vele
-                    voormalige leerlingen van de kleuterschool of werknemers uit de kantoortijd.
-                  </p>
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
                 </div>
               </div>
-            </div>
-          </section>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="2023-09-09">2023</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Open Monumentendag 2023</h4>
+                    <p class="card-text text-secondary">
+                      Op 9 september 2023 hebben wij voor het eerst het monument opengesteld tijdens Open Monumentendag. Wij bezoeken zelf graag ieder jaar de
+                      nieuwe deelnemende monumenten van OMD. Toch wisten we niet echt wat wij konden verwachten als participant. Met de teller op 690 bezoekers
+                      aan het einde van de dag, waren we op zijn zachtst gezegd redelijk overvallen. Het was bijzonder leuk om in gesprek te gaan met vele
+                      voormalige leerlingen van de kleuterschool of werknemers uit de kantoortijd.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="2024">2024</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Dakterras</h4>
-                  <p class="card-text text-secondary">
-                    In 2024 hebben we door
-                    <a href="https://denhoed.nl" target="_blank">Den Hoed</a>
-                    een dakterras laten aanleggen op onze (opgehoogde) schuren, nadat we zelf de oude, niet-functionele brandtrap hadden verwijderd. Het terras
-                    sluit direct aan op onze woonverdieping, waardoor we er nu al veel vaker gebruik van maken dan van onze tuin in alle voorgaande jaren.
-                  </p>
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="2024">2024</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Dakterras</h4>
+                    <p class="card-text text-secondary">
+                      In 2024 hebben we door
+                      <a href="https://denhoed.nl" target="_blank">Den Hoed</a>
+                      een dakterras laten aanleggen op onze (opgehoogde) schuren, nadat we zelf de oude, niet-functionele brandtrap hadden verwijderd. Het
+                      terras sluit direct aan op onze woonverdieping, waardoor we er nu al veel vaker gebruik van maken dan van onze tuin in alle voorgaande
+                      jaren.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
               </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
 
-          <section class="row">
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
-              </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
-                <time datetime="2025-09-13">2025</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Open Monumentendag 2025</h4>
-                  <p class="card-text text-secondary">
-                    Op 13 september 2025 namen wij voor de tweede keer deel aan Open Monumentendag. Gezien de sombere weersvoorspelling verwachtten we niet het
-                    bezoekersaantal van 2023 te evenaren. Toch mochten we uiteindelijk 486 bezoekers verwelkomen en luisterden we opnieuw naar leuke verhalen.
-                  </p>
+            <section class="row">
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
                 </div>
               </div>
-            </div>
-          </section>
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-start mt-2 mt-md-1">
+                  <time datetime="2025-09-13">2025</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Open Monumentendag 2025</h4>
+                    <p class="card-text text-secondary">
+                      Op 13 september 2025 namen wij voor de tweede keer deel aan Open Monumentendag. Gezien de sombere weersvoorspelling verwachtten we niet
+                      het bezoekersaantal van 2023 te evenaren. Toch mochten we uiteindelijk 486 bezoekers verwelkomen en luisterden we opnieuw naar leuke
+                      verhalen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-          <section class="row">
-            <div class="col">
-              <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
-                <time datetime="2026-09-12">2026</time>
-              </h3>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Open Monumentendag 2026</h4>
-                  <p class="card-text text-secondary">
-                    Aanvankelijk wilden we Open Monumentendag 2026 overslaan. Uiteindelijk besloten we toch weer mee te doen. Een mooie stok achter de deur om
-                    een paar klusjes die al veel te lang op de planning stonden eindelijk eens aan te pakken.
-                  </p>
-                  <p class="card-text text-secondary">
-                    Het weer was gelukkig een stuk beter dan in 2025, en dat was ook te merken aan het aantal bezoekers. We mochten 682 bezoekers verwelkomen en
-                    hebben opnieuw veel leuke verhalen en mooie reacties gehoord.
-                  </p>
+            <section class="row">
+              <div class="col">
+                <h3 class="d-flex justify-content-center justify-content-md-end mt-2 mt-md-1">
+                  <time datetime="2026-09-12">2026</time>
+                </h3>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Open Monumentendag 2026</h4>
+                    <p class="card-text text-secondary">
+                      Aanvankelijk wilden we Open Monumentendag 2026 overslaan. Uiteindelijk besloten we toch weer mee te doen. Een mooie stok achter de deur om
+                      een paar klusjes die al veel te lang op de planning stonden eindelijk eens aan te pakken.
+                    </p>
+                    <p class="card-text text-secondary">
+                      Het weer was gelukkig een stuk beter dan in 2025, en dat was ook te merken aan het aantal bezoekers. We mochten 682 bezoekers verwelkomen
+                      en hebben opnieuw veel leuke verhalen en mooie reacties gehoord.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-auto d-none d-md-flex flex-column text-center">
-              <div class="m-2">
-                <i class="bi bi-calendar"></i>
+              <div class="col-auto d-none d-md-flex flex-column text-center">
+                <div class="m-2">
+                  <i class="bi bi-calendar"></i>
+                </div>
+                <div class="row h-100">
+                  <div class="col border-end">&nbsp;</div>
+                  <div class="col">&nbsp;</div>
+                </div>
               </div>
-              <div class="row h-100">
-                <div class="col border-end">&nbsp;</div>
-                <div class="col">&nbsp;</div>
-              </div>
-            </div>
-            <div class="col d-none d-md-flex"><!-- spacer --></div>
-          </section>
-        </div>
-      </section>
+              <div class="col d-none d-md-flex"><!-- spacer --></div>
+            </section>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script type="module">
@@ -520,7 +525,7 @@
 
       const lightbox = new PhotoSwipeLightbox({
         gallery: '#gallery',
-        children: 'a',
+        children: 'a[data-pswp-width]',
         pswpModule: () => import('photoswipe'),
         bgOpacity: 0.9,
         loop: false,

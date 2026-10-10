@@ -2,9 +2,8 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Rob Bast" />
     <meta name="description" content="Peperstraat 16e" />
     <meta name="theme-color" content="#730000" />
@@ -30,17 +29,16 @@
   </head>
 
   <body class="site-page">
+    <a class="skip-link visually-hidden-focusable" href="#content">Naar inhoud</a>
+
     <header class="site-header container-fluid mb-3 mb-md-4">
       <div class="container d-flex flex-wrap align-items-center">
         <div class="flex-shrink-0">
-          <picture class="logo">
-            <source media="(max-width: 767px)" srcset="favicon-small.svg" />
-            <img src="favicon-large.svg" alt="Peperstraat 16e" class="logo-img" />
-          </picture>
+          <img src="logo.svg" alt="Peperstraat 16e" class="logo-img" width="116" height="171" />
         </div>
         <div class="flex-grow-1 ms-1 ms-md-5">
           <h1>Peperstraat <mark>16e</mark></h1>
-          <h2>Gouda</h2>
+          <p class="site-subtitle">Gouda</p>
         </div>
         <nav class="flex-grow-1 m-2 navbar nav-underline justify-content-center fs-5" aria-label="Hoofdnavigatie">
           <a class="nav-link active" aria-current="page">16e</a>
@@ -49,12 +47,12 @@
           <a class="nav-link" href="bronnen.html">Bronnen</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </nav>
-        <button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="theme-toggle" aria-label="Wissel thema"><i class="bi bi-moon-stars-fill"></i></button>
       </div>
     </header>
 
     <div class="page-content">
-      <main class="container">
+      <main class="container" id="content">
         <h2>16e</h2>
         <p class="lead">Verscholen achter de voorgevels van de Peperstraat, ligt ons monumentale woonhuis.</p>
         <p>
@@ -89,8 +87,8 @@
           >
           </iframe>
         </div>
-        <div class="alert alert-warning" role="alert">
-          <h4 class="alert-heading">
+        <div class="alert alert-warning" role="note">
+          <h3 class="alert-heading h4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -105,7 +103,7 @@
               />
             </svg>
             Mariabeeld fabeltjes
-          </h4>
+          </h3>
           <p class="mb-0">
             In dit filmfragment wordt vermeld dat het levensgrote Mariabeeld in het trappenhuis oorspronkelijk op het dak heeft gestaan. Dat is niet waar. Het
             beeld is aangekocht door een voormalig bewoonster en achtergelaten bij haar vertrek.
@@ -127,11 +125,11 @@
         "@type": "WebPage",
         "mainContentOfPage": {
           "@type": "WebPageElement",
-          "cssSelector": "body > main"
+          "cssSelector": "main"
         },
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": "body > main > p"
+          "cssSelector": "main > p"
         },
         "inLanguage": "nl-NL",
         "about": {
