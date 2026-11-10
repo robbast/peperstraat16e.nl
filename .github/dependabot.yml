@@ -12,6 +12,11 @@ updates:
         patterns:
           - vite
           - vite-plugin-static-copy
+      # stylelint-config-standard has a peer dependency on stylelint, so majors must land together
+      stylelint:
+        patterns:
+          - stylelint
+          - stylelint-*
       minor-patch:
         update-types:
           - 'minor'
